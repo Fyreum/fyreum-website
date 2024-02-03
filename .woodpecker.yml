@@ -1,0 +1,16 @@
+steps:
+
+  Build Latest Image:
+    when:
+      event: push
+      branch: master
+      evaluate: 'not (CI_COMMIT_MESSAGE contains "[SKIP CI]")'
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      platforms: linux/amd64, linux/arm64
+      repo: git.statix.dev/fyreum/fyreum-website
+      registry: https://git.statix.dev
+      tags: latest, ${CI_COMMIT_TAG}
+      username: fyreum
+      password:
+        from_secret: gitlab_registry_key
