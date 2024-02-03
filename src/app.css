@@ -80,10 +80,6 @@ nav.sticking {
     @apply absolute top-0 group-hover:top-[100%] group-hover:opacity-0 transition-all duration-300;
 }
 
-.grid-image {
-    @apply order-first group-odd:sm:order-last;
-}
-
 .pixelated img {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;

@@ -29,8 +29,8 @@
         Thank you for your understanding!
     </div>
 
-    <SubHeader header="About Me"
-               customId="about"></SubHeader>
+    <SubHeader header="About Me" customId="about"></SubHeader>
+
     <ConfigurableGridItem
             header="Fyreum"
             projectInfo="Me"
@@ -52,6 +52,7 @@
                 header="Erethon"
                 projectInfo="Server"
                 large={true}
+                flip={true}
                 image={erethon}
                 href="https://erethon.de/"
                 externalLink={true}
