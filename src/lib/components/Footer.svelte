@@ -14,6 +14,6 @@
         <a class="footer-item" href="https://kit.svelte.dev" target="_blank">SvelteKit</a>
     </div>
     <div class="flex shrink-0 justify-center md:justify-end">
-        <a class="footer-item" href="https://github.com/Fyreum" target="_blank">See on GitHub</a>
+        <a class="footer-item" href="https://github.com/Fyreum/fyreum-website" target="_blank">See on GitHub</a>
     </div>
 </footer>
