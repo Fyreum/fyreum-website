@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-    <title>Fyreum - Homepage</title>
+    <title>Homepage - Fyreum</title>
     <meta name="description" content="I'm a self-taught Java-Developer and semi noob at Webdesign. This page shows some
     of my projects and current work!">
 </svelte:head>

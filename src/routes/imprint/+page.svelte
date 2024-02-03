@@ -1,3 +1,9 @@
+
+<svelte:head>
+    <title>Imprint - Fyreum</title>
+    <meta name="description" content="Imprint including information according to &sect; 5 TMG. ">
+</svelte:head>
+
 <div class="format-headers max-w-5xl w-full py-4 px-6 mb-8 glass-bg rounded-2xl">
     <h1 class="text-blue-600 text-center">Impressum und Datenschutz</h1>
 
