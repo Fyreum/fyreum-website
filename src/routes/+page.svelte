@@ -17,12 +17,12 @@
     }
 </script>
 
-<div id="construction-notice" class="mx-2 mono-tag-blue max-w-2xl w-full p-4 text-center rounded-xl">
-    This Website is currently under construction. Some content may be missing or incomplete.
-    Thank you for your understanding!
-</div>
-
 <div class="px-2 mb-6 max-w-5xl w-full">
+    <div id="construction-notice" class="mono-tag-blue max-w-2xl w-full p-4 mx-auto text-center rounded-xl">
+        This Website is currently under construction. Some content may be missing or incomplete.
+        Thank you for your understanding!
+    </div>
+
     <SubHeader header="About Me"
                customId="about"></SubHeader>
     <ConfigurableGridItem
@@ -75,7 +75,7 @@
                 externalLink={true}
                 description="Working in a team often times requires communication. To simplify the process of working with
                 each other's code, documentations come in handy! As the Bedrock library is used in almost all of Erethon's
-                plugins, ">
+                projects, documenting complex parts of it becomes mandatory.">
         </ConfigurableGridItem>
         <ConfigurableGridItem
                 header="Streaming Panel"
