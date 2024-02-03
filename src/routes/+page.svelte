@@ -89,10 +89,9 @@
                 projectInfo="Streaming"
                 large={true}
                 image={revine}
-                description="Lorum Ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec euismod,
-                nunc eget ultricies aliquam, nunc nisl ultricies nunc, eget ultricies nunc nisl ut nisl.
-                Nulla facilisi. Donec euismod, nunc eget ultricies aliquam, nunc nisl ultricies nunc,
-                eget ultricies nunc nisl ut nisl.">
+                description="Together with some friends of mine, I'm building a Plex-like streaming platform, that offers
+                realtime movie data like durations, trailers & descriptions via the TMDb API. This project combines Frontend (UI)
+                and Backend (API), to create a useful Web-App.">
         </ConfigurableGridItem>
     </div>
 
@@ -102,7 +101,7 @@
         <table class="w-fit justify-center">
             <tr>
                 <td class="pr-8 md:pr-16 xl:pr-24">Discord:</td>
-                <td>Fyreum (Fyreum)</td>
+                <td>Fyreum (fyreum)</td>
             </tr>
             <tr>
                 <td>Email:</td>
