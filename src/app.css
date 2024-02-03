@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Lato";
+    src: url("$lib/fonts/Lato-Regular.ttf");
+}
+
+* {
+    @apply font-[Lato,"Arial",sans-serif];
+}
+
+body {
+    @apply bg-background text-gray-200;
+}
+
+/*body:after {
+    background: radial-gradient(ellipse at top, theme("colors.bg-blue"), transparent),
+    radial-gradient(ellipse at bottom, theme("colors.bg-blue"), transparent); !* rgba(92, 246, 241, 0.17) *!
+    @apply fixed top-0 left-0 w-full h-full z-[-1000] content-[''] !*text-bg-blue bg-gradient-to-b from-current*! !*animate-[30s_infinite_background-cycle]*!;
+}*/
+
+a {
+    @apply text-blue-600 hover:underline underline-offset-2;
+}
+
+a:not(.ignore-external)[target="_blank"]::after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+    margin: 0 3px 0 5px;
+    filter: invert(0.925);
+}
+/* Will prevent the external icon to be displayed */
+.ignore-external {}
+
+/* Navigation bar */
+
+nav {
+    transition-property: background-color, margin, border-radius, box-shadow, backdrop-filter, -webkit-backdrop-filter;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    transform: translateZ(0); /* I heard this improves performance on mobile */
+
+    & .nav-item {
+        @apply text-gray-200 hover:no-underline relative;
+    }
+
+    & .nav-item::before {
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+        @apply absolute content-[''] block w-full h-[2px] bottom-0 left-0 bg-blue-600;
+    }
+    & .nav-item:hover::before {
+        transform: scaleX(1);
+    }
+}
+
+nav:not(.sticking) {
+    @apply sm:mx-2 md:mx-4 md:rounded-2xl;
+
+    #nav-icon {
+        @apply glass-bg;
+    }
+}
+
+nav.sticking {
+    @apply glass-bg md:mx-16 md:rounded-2xl top-[-1px] md:top-3;
+}
+
+/* Footer */
+
+.footer-item {
+    @apply relative w-fit items-center text-gray-200;
+}
+
+/* Grids */
+
+.grid-hover-card {
+    @apply absolute top-0 group-hover:top-[100%] group-hover:opacity-0 transition-all duration-300;
+}
+
+.grid-image {
+    @apply order-first group-odd:sm:order-last;
+}
+
+.pixelated img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Glass bg */
+
+.glass-bg {
+    @apply backdrop-blur bg-dark-2/[0.3] border border-dark-2/[0.3] shadow-[0_4px_30px_rgb(0,0,0,0.1)];
+}
+
+/* Mono Tags */
+
+.mono-tag-red,
+.mono-tag-green,
+.mono-tag-blue {
+    @apply px-2 font-mono rounded-lg border;
+}
+
+.mono-tag-blue {
+    @apply bg-blue-500/25 border-blue-500;
+}
+
+.mono-tag-green {
+    @apply bg-green-500/25 border-green-500;
+}
+
+.mono-tag-red {
+    @apply bg-red-500/25 border-red-500;
+}
