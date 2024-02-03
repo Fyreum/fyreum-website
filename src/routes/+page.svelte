@@ -17,6 +17,12 @@
     }
 </script>
 
+<svelte:head>
+    <title>Fyreum - Homepage</title>
+    <meta name="description" content="I'm a self-taught Java-Developer and semi noob at Webdesign. This page shows some
+    of my projects and current work!">
+</svelte:head>
+
 <div class="px-2 mb-6 max-w-5xl w-full">
     <div id="construction-notice" class="mono-tag-blue max-w-2xl w-full p-4 mx-auto text-center rounded-xl">
         This Website is currently under construction. Some content may be missing or incomplete.
