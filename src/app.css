@@ -33,6 +33,21 @@ a:not(.ignore-external)[target="_blank"]::after {
 /* Will prevent the external icon to be displayed */
 .ignore-external {}
 
+.format-headers {
+    h1 {
+        @apply text-4xl font-bold py-4;
+    }
+    h2 {
+        @apply text-3xl font-bold py-3;
+    }
+    h3 {
+        @apply text-2xl font-bold py-2;
+    }
+    p {
+        @apply py-1.5;
+    }
+}
+
 /* Navigation bar */
 
 nav {
