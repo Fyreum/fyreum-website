@@ -2,7 +2,7 @@ steps:
 
   Build Latest Image:
     when:
-      event: push, manual
+      event: push
       branch: master
       evaluate: 'not (CI_COMMIT_MESSAGE contains "[SKIP CI]")'
     image: woodpeckerci/plugin-docker-buildx
