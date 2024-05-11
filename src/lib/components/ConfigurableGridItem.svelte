@@ -29,7 +29,7 @@
             </div>
 
             <!-- TODO Fix description height on smaller devices -->
-            <p class="flex flex-[1_0_0] mx-1 mb-2 justify-start shrink text-wrap">
+            <p class="flex flex-[1_0_0] mx-1 mb-2 justify-start shrink text-wrap lg:text-lg truncate">
                 {#each description.split("<br>") as line}
                     {line}<br>
                 {/each}

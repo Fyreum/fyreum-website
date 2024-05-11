@@ -7,6 +7,7 @@
     import bedrockDocs from "$lib/images/bedrock_docs_screenshot.png";
     import revine from "$lib/images/revine_oppenheimer.png";
     import fyreum from "$lib/images/favicon_pixelated_v5.png";
+    import KnowledgeIcon from "$lib/components/KnowledgeIcon.svelte";
 
     let myAge = calculateAge(new Date("2003-07-26").getTime());
 
@@ -29,7 +30,7 @@
         Thank you for your understanding!
     </div>
 
-    <SubHeader header="About Me" customId="about"></SubHeader>
+    <SubHeader header="About Me" customId="about" />
 
     <ConfigurableGridItem
             header="Fyreum"
@@ -38,14 +39,24 @@
             image={fyreum}
             disableButton={true}
             customClasses="pixelated"
-            description="Moin! My name is Luka. I'm a self-taught Java-Developer and semi noob at Webdesign.
-            I'm currently {myAge} years old and study computer science at the University Hamburg.
+            description="Moin! My name is Luka. I'm a self-taught Java-Developer and semi-something at Webdesign.
+            I'm currently {myAge} years old and work on multiple different projects related to Java and WebDev.
             <br>
             <br>
             Here is an overview for some of my projects over the past couple of years.">
     </ConfigurableGridItem>
 
-    <SubHeader header="Projects"></SubHeader>
+    <SubHeader header="Knowledge" />
+
+    <div class="w-full grid grid-cols-5 gap-2">
+        <KnowledgeIcon title="Java" src="https://img.icons8.com/color/192/000000/java-coffee-cup-logo.png"/>
+        <KnowledgeIcon title="Svelte" src="/svelte.png"/>
+        <KnowledgeIcon title="Tailwindcss" src="https://img.icons8.com/color/192/000000/tailwindcss.png"/>
+        <KnowledgeIcon title="HTML/CSS" src="https://img.icons8.com/color/192/000000/html-5.png"/>
+        <KnowledgeIcon title="JavaScript" src="https://img.icons8.com/color/192/000000/javascript.png"/>
+    </div>
+
+    <SubHeader header="Projects" />
 
     <div id="projects-section" class="w-full grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
         <ConfigurableGridItem
@@ -59,7 +70,8 @@
                 description="Erethon is a Medieval-MMORPG-Factions Server for Minecraft. It offers plenty of custom-made
                 content and in-game features, as well as a lively community since 2011.
                 <br>
-                As an Admin, I'm responsible for the custom Plugin-Development and in-game features like commands, player UI and more.
+                As an Admin, I'm responsible for the custom Plugin-Development, Website and in-game features like commands,
+                player UI and more
                 <br>
                 <br>
                 The Server is currently offline but is soon to be re-released with more content than ever!">
@@ -95,7 +107,7 @@
         </ConfigurableGridItem>
     </div>
 
-    <SubHeader header="Contact"></SubHeader>
+    <SubHeader header="Contact" />
 
     <div class="flex flex-col items-center glass-bg p-4 rounded-xl">
         <table class="w-fit justify-center">
