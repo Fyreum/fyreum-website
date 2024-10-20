@@ -12,8 +12,8 @@
         <img class="size-10" src="/favicon_v2_light.png" alt="Logo">
     </div>
 
-    <div class="max-content px-6 py-8 flex gap-3 w-full items-center justify-between border-y border-gray-600/60">
-        <div class="flex flex-col gap-3 justify-center">
+    <div class="max-content px-6 py-8 flex flex-col md:flex-row gap-8 md:gap-3 w-full md:items-center md:justify-between border-y border-gray-600/60">
+        <div class="flex flex-col gap-2 md:gap-3 items-center md:items-start">
             <h3 class="text-xl text-slate-500 font-bold mb-1 tracking-tight">Policies</h3>
 
             <a class="footer-item unstyled-link" href="/imprint">Imprint</a>
@@ -21,7 +21,7 @@
             <a class="footer-item unstyled-link" href="/cookies">Cookies</a>
         </div>
 
-        <div class="flex flex-col gap-3 justify-center">
+        <div class="flex flex-col gap-2 md:gap-3 items-center md:items-start">
             <h3 class="text-xl text-slate-500 font-bold mb-1 tracking-tight">Socials</h3>
 
             <a class="footer-item unstyled-link" href="/imprint">Linkedin</a>
@@ -29,7 +29,7 @@
             <a class="footer-item unstyled-link" href="mailto:mail@fyreum.de">E-Mail</a>
         </div>
 
-        <div class="flex flex-col gap-3 shrink-0">
+        <div class="flex flex-col gap-2 md:gap-3 items-center md:items-start">
             <h3 class="text-xl text-slate-500 font-bold mb-1 tracking-tight">References</h3>
 
             <a class="footer-item unstyled-link" href="https://github.com/Fyreum/fyreum-website" target="_blank">See on GitHub</a>

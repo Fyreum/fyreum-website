@@ -51,6 +51,7 @@
     let languageDetails: HTMLDivElement;
     let previewSrc: string = languages[1].previewImage;
 
+    let setCurrentLanguageTo: (i: number) => void;
 
     onMount(() => {
         const wrapper = document.querySelector(".wrapper");
@@ -123,7 +124,7 @@
             }
             isDragging = false;
             carousel.classList.remove("dragging");
-            setCurrentLanguage(mod(Math.floor(carousel.scrollLeft / firstCardWidth) - languages.length + 1, languages.length));
+            setCurrentLanguage(modL(Math.floor(carousel.scrollLeft / firstCardWidth) - languages.length - 1));
         }
 
         const infiniteScroll = () => {
@@ -185,6 +186,15 @@
         wrapper.addEventListener("mouseleave", autoPlay);
 
         setCurrentLanguage(0);
+
+        setCurrentLanguageTo = (language) => {
+            if (currentLanguage < language) {
+                carousel.scrollLeft += (language - currentLanguage) * firstCardWidth;
+            } else {
+                carousel.scrollLeft -= (currentLanguage - language) * firstCardWidth;
+            }
+            setCurrentLanguage(language);
+        }
     });
 
     function modL(n: number) {
@@ -194,6 +204,7 @@
     function mod(n: number, m: number) {
         return ((n % m) + m) % m;
     }
+
 </script>
 
 <div class="w-full bg-black/50 border-t border-gray-600/60 px-4">
@@ -221,20 +232,20 @@
             </ul>
             <i id="right" class="fill-gray-400 p-1 z-20 hover:fill-blue-200 right-0 sm:right-[-22px]">
                 <svg class="translate-x-[5%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M517.85-480 354.92-642.92q-8.3-8.31-8.5-20.89-.19-12.57 8.5-21.27 8.7-8.69 21.08-8.69 12.38 0 21.08 8.69l179.77 179.77q5.61 5.62 7.92 11.85 2.31 6.23 2.31 13.46t-2.31 13.46q-2.31 6.23-7.92 11.85L397.08-274.92q-8.31 8.3-20.89 8.5-12.57.19-21.27-8.5-8.69-8.7-8.69-21.08 0-12.38 8.69-21.08L517.85-480Z"/></svg>
-            </i>
+            </i><!--
             <div class="flex mt-4 gap-3 w-fit mx-auto">
                 {#each languages as _, i}
                     <button id="language-circle-{i}"
                             class="rounded-full size-2 cursor-pointer transition-all duration-300 {currentLanguage === i ? 'scale-125' : ''}"
-                         style="background-color: {currentLanguage === i ? languages[modL(currentLanguageFixed)].color : 'rgb(71 85 105 / var(--tw-bg-opacity))'}">
+                         style="background-color: {currentLanguage === i ? languages[modL(currentLanguageFixed)].color : 'rgb(71 85 105 / var(&#45;&#45;tw-bg-opacity))'}">
 
                     </button>
                 {/each}
-            </div>
+            </div>-->
         </div>
     </div>
 
-    <div class="max-content py-20 px-6 grid md:grid-cols-2 gap-6 md:gap-8 place-items-center">
+    <div class="max-content py-16 px-6 grid md:grid-cols-2 gap-6 md:gap-8 place-items-center">
         <img class="rounded-xl bg-slate-700 aspect-video w-full shadow-lg object-cover object-center"
              alt="ToDo-App" bind:this={languageDetails}
              src={previewSrc}>
@@ -257,5 +268,14 @@
                 Click me
             </button>
         </div>
+    </div>
+    <div class="flex -translate-y-8 pb-8 gap-3 w-fit mx-auto">
+        {#each languages as _, i}
+            <button id="language-circle-{i}"
+                    class="rounded-full size-2 cursor-pointer transition-all duration-300 {currentLanguage === i ? 'scale-125' : ''}"
+                    style="background-color: {currentLanguage === i ? languages[modL(currentLanguageFixed)].color : 'rgb(71 85 105 / var(--tw-bg-opacity))'}"
+                    on:click={() => setCurrentLanguageTo(i)}>
+            </button>
+        {/each}
     </div>
 </div>
