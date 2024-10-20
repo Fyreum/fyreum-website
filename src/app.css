@@ -1,29 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "Lato";
-    src: url("$lib/fonts/Lato-Regular.ttf");
-}
-
 * {
-    @apply font-[Lato,"Arial",sans-serif];
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
-    @apply bg-background text-gray-200;
+    @apply bg-background text-white overflow-x-hidden;
 }
 
-/*body:after {
+body:after {
     background: radial-gradient(ellipse at top, theme("colors.bg-blue"), transparent),
-    radial-gradient(ellipse at bottom, theme("colors.bg-blue"), transparent); !* rgba(92, 246, 241, 0.17) *!
-    @apply fixed top-0 left-0 w-full h-full z-[-1000] content-[''] !*text-bg-blue bg-gradient-to-b from-current*! !*animate-[30s_infinite_background-cycle]*!;
-}*/
+    radial-gradient(ellipse at bottom, theme("colors.bg-blue"), transparent); /* rgba(92, 246, 241, 0.17) */
+    @apply fixed top-0 left-0 w-full h-full z-[-1000]  content-[''] /*text-bg-blue bg-gradient-to-b from-current*/ /*animate-[30s_infinite_background-cycle]*/;
+}
 
-a {
+a:not(.unstyled-link) {
     @apply text-blue-600 hover:underline underline-offset-2;
 }
+
+/* Will prevent the link to be styled */
+.unstyled-link {}
 
 a:not(.ignore-external)[target="_blank"]::after {
     content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
@@ -51,43 +51,46 @@ a:not(.ignore-external)[target="_blank"]::after {
 /* Navigation bar */
 
 nav {
-    transition-property: background-color, margin, border-radius, box-shadow, backdrop-filter, -webkit-backdrop-filter;
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
     transform: translateZ(0); /* I heard this improves performance on mobile */
-
-    & .nav-item {
-        @apply text-gray-200 hover:no-underline relative;
-    }
-
-    & .nav-item::before {
-        transform: scaleX(0);
-        transition: transform 0.2s ease;
-        @apply absolute content-[''] block w-full h-[2px] bottom-0 left-0 bg-blue-600;
-    }
-    & .nav-item:hover::before {
-        transform: scaleX(1);
-    }
-}
-
-nav:not(.sticking) {
-    @apply sm:mx-2 md:mx-4 md:rounded-2xl;
-
-    #nav-icon {
-        @apply glass-bg;
-    }
 }
 
 nav.sticking {
-    @apply glass-bg md:mx-16 md:rounded-2xl top-[-1px] md:top-3;
+    #nav-wrapper {
+        @apply bg-black/90 shadow-lg border-b border-gray-600/60;
+    }
+
+    /*& .nav-item {
+        @apply hover:bg-black/95 hover:text-white;
+    }*/
 }
 
 /* Footer */
 
 .footer-item {
-    @apply relative w-fit items-center text-gray-200;
+    @apply relative w-fit items-center text-blue-100 underline-offset-2 hover:underline;
 }
+
+/* Messages */
+
+.blue-message {
+    animation: slide-in 0.15s ease-out;
+}
+
+.blue-message:after {
+    @apply absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rotate-45 content-[''] border-8 border-transparent border-r-blue-500 size-4;
+}
+
+/* Phone */
+
+#fingerprint:hover {
+    @apply bg-white border-white cursor-pointer;
+}
+
+#fingerprint:hover:before {
+    @apply rounded-full absolute -inset-2 content-[''] bg-gray-100 blur-xl animate-pulse;
+    animation-duration: 1s;
+}
+
 
 /* Grids */
 
@@ -99,6 +102,42 @@ nav.sticking {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+}
+
+/* Masks */
+
+.fade-out-sides {
+    mask-image: linear-gradient(to right, transparent 5%, #000, transparent 95%);
+}
+
+.fade-out-middle {
+    mask-image: linear-gradient(to right, #000 0%, transparent 25%, transparent 75%, #000 100%);
+}
+
+.fade-out-bottom {
+    mask-image: linear-gradient(to bottom, #000, transparent 100%);
+}
+
+.fade-out-top {
+    mask-image: linear-gradient(to top, #000, transparent 100%);
+}
+
+/* Patterns */
+
+.dotted-background {
+    background-image: radial-gradient(circle at 3px 3px, currentColor 3px, transparent 0);
+    background-size: 40px 40px;
+    background-position: center;
+}
+
+/* Responsiveness */
+
+.max-content {
+    @apply max-w-[1200px] w-full mx-auto;
+}
+
+.max-text {
+    @apply max-w-[600px] w-full mx-auto;
 }
 
 /* Glass bg */
@@ -125,4 +164,224 @@ nav.sticking {
 
 .mono-tag-red {
     @apply bg-red-500/25 border-red-500;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, theme("colors.glow.100"), theme("colors.glow.300"));
+    @apply text-transparent bg-clip-text;
+}
+
+/* Gradient stuff */
+
+.gradient-border {
+    background: conic-gradient(
+            from var(--gradient-angle),
+            theme("colors.glow.100"),
+            theme("colors.glow.200"),
+            theme("colors.glow.300"),
+            theme("colors.glow.200"),
+            theme("colors.glow.100")
+    );
+    @apply rounded-[inherit] z-[-1] content-[''] absolute -inset-[10px]; /* -inset-1.5 rounded-xl */
+}
+
+.glowing-card {
+    /*box-shadow: 0 0 5px 2px rgb(10, 10, 10, 0.2);*/
+    @apply relative; /* rounded-lg bg-white aspect-[1/1.5]*/
+}
+
+.glowing-card::before,
+.glowing-card::after {
+    background: conic-gradient(
+            from var(--gradient-angle),
+            theme("colors.glow.100"),
+            theme("colors.glow.200"),
+            theme("colors.glow.300"),
+            theme("colors.glow.200"),
+            theme("colors.glow.100")
+    );
+    animation: rotation 10s linear infinite;
+    @apply rounded-[inherit] z-[-1] content-[''] absolute -inset-[10px]; /* -inset-1.5 rounded-xl */
+}
+
+.glowing-card:after {
+    /*filter: blur(3.5rem);*/
+    @apply blur-[5rem];
+}
+
+/* Rotation */
+
+@property --3d-rotation {
+    inherits: true;
+    initial-value: 6deg;
+    syntax: "<angle>";
+}
+
+.rotate-3d-left-1 {
+    transform: perspective(20em) rotateY(6deg);
+}
+
+.rotate-3d-left-2 {
+    transform: perspective(12em) rotateY(6deg) rotateZ(-3deg);
+}
+
+.rotate-3d-right-1 {
+    transform: perspective(20em) rotateY(-6deg);
+}
+
+.rotate-3d-right-2 {
+    transform: perspective(12em) rotateY(-6deg) rotateZ(3deg);
+}
+
+/* Carousel */
+
+.wrapper {
+    @apply relative w-full max-w-[600px] mx-auto px-4;
+}
+.wrapper i {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    @apply absolute top-1/2 -translate-y-1/2 size-12 bg-gray-900/70 border border-gray-700/70 hover:border-gray-600/70 rounded-full cursor-pointer transition;
+}
+.wrapper i:active {
+    @apply -translate-y-1/2 scale-90;
+}
+.wrapper .carousel {
+    grid-auto-columns: calc((100% / 3) - 12px);
+    scrollbar-width: none;
+    @apply h-full grid grid-flow-col overflow-x-auto gap-4 rounded-lg scroll-smooth snap-x snap-mandatory;
+}
+.carousel::-webkit-scrollbar {
+    @apply hidden;
+}
+.carousel.no-transition {
+    @apply scroll-auto;
+}
+.carousel.dragging {
+    @apply snap-none scroll-auto;
+}
+.carousel.dragging .card {
+    @apply cursor-grab select-none;
+}
+.carousel .card {
+    @apply flex items-center overflow-y-hidden justify-center snap-start transition-[padding] duration-300;
+
+    img {
+        @apply bg-gray-900/70 border border-gray-700/70 rounded-lg cursor-pointer transition-[border-color] duration-300;
+    }
+}
+
+.carousel .card:not(.current) {
+    @apply p-4;
+}
+
+.carousel .card.current img {
+    border-color: var(--language-color);
+    @apply border-2;
+}
+
+@property --language-color {
+    syntax: '<color>';
+    initial-value: #000;
+    inherits: false;
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+}
+
+/* Animation stuff */
+
+#fingerprint-prompt {
+    animation: bouncing-2 3s infinite;
+}
+#fingerprint-prompt > div {
+    animation: pulsing 1s infinite;
+}
+#fingerprint-prompt :nth-child(1) {
+    animation-delay: 0.5s;
+}
+#fingerprint-prompt :nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation {
+    0% {
+        --gradient-angle: 45deg;
+    }
+    100% {
+        --gradient-angle: 405deg;
+    }
+}
+
+.animate-bouncing {
+    animation: bouncing 1.5s infinite;
+}
+
+@keyframes bouncing {
+    0%, 100% {
+        transform: translateY(-50%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+}
+
+@keyframes bouncing-2 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.5rem);
+    }
+}
+
+@keyframes pulsing {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+        background-color: white;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-language {
+    animation: breathe linear 150ms;
+}
+
+@keyframes breathe {
+    45% {
+        opacity: 0;
+    }
+    55% {
+        opacity: 0;
+    }
 }

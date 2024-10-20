@@ -1,15 +1,16 @@
-<script>
-	import '../app.css';
-	import Header from "$lib/components/Header.svelte";
-	import Footer from "$lib/components/Footer.svelte";
+<script lang="ts">
+    import '../app.css';
+    import Footer from "$lib/components/Footer.svelte";
+    import Header from "$lib/components/Header.svelte";
+    import Navigation from "$lib/components/Navigation.svelte";
 </script>
 
-<div class="app ">
-	<Header></Header>
+<Header />
 
-	<main class="flex flex-col items-center w-full min-h-[100vh]">
-		<slot />
-	</main>
+<Navigation />
 
-	<Footer></Footer>
-</div>
+<main class="w-full min-h-[95dvh]">
+    <slot />
+</main>
+
+<Footer />

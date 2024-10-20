@@ -13,8 +13,7 @@
         25469 Halstenbek</p>
 
     <h2>Kontakt</h2>
-    <p>Telefon: 0172 94 28 445<br />
-        E-Mail: mail@fyreum.de</p>
+    <p>E-Mail: mail@fyreum.de</p>
 
     <h1 class="text-blue-600 text-center">Datenschutz&shy;erkl&auml;rung</h1>
     <h2>1. Datenschutz auf einen Blick</h2>

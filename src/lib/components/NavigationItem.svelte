@@ -4,6 +4,6 @@
         header = "Start";
 </script>
 
-<a class="shrink-0 nav-item px-3 py-2 font-medium tracking-wide rounded-lg" href="{href}">
+<a class="flex nav-item text-blue-100 shrink-0 unstyled-link px-4 py-1 font-medium text-xl rounded-full transition-colors hover:bg-white hover:text-black" href="{href}">
     {header}
 </a>
