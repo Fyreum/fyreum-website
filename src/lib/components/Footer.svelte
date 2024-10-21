@@ -1,5 +1,5 @@
-<script>
-    import LanguagesSection from "$lib/components/ProgrammingLanguagesSection.svelte";
+<script lang="ts">
+
 </script>
 
 <div class="relative overflow-hidden h-2 w-full bg-white/10 text-black/50 border-t border-neutral-600/60">

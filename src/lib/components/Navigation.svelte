@@ -17,7 +17,11 @@
         open.subscribe((value) => {
             toggleButton.style.transform = value ? "translateX(-" + getScrollBarWidth() + "px)" : "";
             document.body.style.paddingRight = value ? getScrollBarWidth() + "px" : "";
-            messageBox.style.paddingRight = value ? getScrollBarWidth() + "px" : "";
+
+            if (messageBox) {
+                messageBox.style.paddingRight = value ? getScrollBarWidth() + "px" : "";
+            }
+
             document.body.classList.toggle("overflow-y-hidden", value);
         });
     });
@@ -45,10 +49,10 @@
 {#if $open}
     <div class="fixed top-0 left-0 w-screen h-screen flex items-center bg-black/90 backdrop-blur-sm z-40" in:fade={{duration: 120}} out:fade={{duration: 120}}>
         <div class="relative flex flex-col gap-3 w-full items-center p-4">
-            <NavItem href="#about" text="About"></NavItem>
-            <NavItem href="#projects" text="Projects"></NavItem>
-            <NavItem href="#blogs" text="Blogs"></NavItem>
-            <NavItem href="#contact" text="Contact"></NavItem>
+            <NavItem href="/#about" text="About"></NavItem>
+            <NavItem href="/#projects" text="Projects"></NavItem>
+            <NavItem href="/#blogs" text="Blogs"></NavItem>
+            <NavItem href="/#contact" text="Contact"></NavItem>
         </div>
     </div>
 {/if}

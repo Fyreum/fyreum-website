@@ -15,7 +15,7 @@ body {
 body:after {
     background: radial-gradient(ellipse at top, theme("colors.bg-blue"), transparent),
     radial-gradient(ellipse at bottom, theme("colors.bg-blue"), transparent); /* rgba(92, 246, 241, 0.17) */
-    @apply fixed top-0 left-0 w-full h-full z-[-1000]  content-[''] /*text-bg-blue bg-gradient-to-b from-current*/ /*animate-[30s_infinite_background-cycle]*/;
+    @apply fixed top-0 left-0 w-full h-full z-[-1000] content-[''] /*text-bg-blue bg-gradient-to-b from-current*/ /*animate-[30s_infinite_background-cycle]*/;
 }
 
 a:not(.unstyled-link) {

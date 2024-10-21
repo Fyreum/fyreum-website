@@ -36,7 +36,7 @@
     }
 </script>
 
-<div class="flex flex-col items-center -mt-12 w-full h-[100dvh] justify-center">
+<div class="flex flex-col items-center -mt-12 w-full h-screen justify-center">
     <!-- Text top left -->
     <div class="absolute left-14 top-1/3 -translate-y-1/2">
         <h1 class="text-6xl font-bold text-blue-100 tracking-tight">
