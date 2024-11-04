@@ -105,6 +105,8 @@
         });
 
         const dragStart = (e: DragEvent) => {
+            if (isDragging) return; // if isDragging is true return from here
+            console.log("dragStart");
             isDragging = true;
             carousel.classList.add("dragging");
             // Records the initial cursor and scroll position of the carousel
@@ -124,7 +126,7 @@
             }
             isDragging = false;
             carousel.classList.remove("dragging");
-            setCurrentLanguage(modL(Math.floor(carousel.scrollLeft / firstCardWidth) - languages.length - 1));
+            setCurrentLanguage(modL(Math.floor(carousel.scrollLeft / firstCardWidth) - languages.length + (cardPerView > 1 ? 1 : -1)));
         }
 
         const infiniteScroll = () => {
@@ -178,9 +180,11 @@
         }
         autoPlay();
 
+        carousel.addEventListener("touchstart", dragStart);
         carousel.addEventListener("mousedown", dragStart);
         carousel.addEventListener("mousemove", dragging);
         document.addEventListener("mouseup", dragStop);
+        document.addEventListener("touchend", dragStop);
         carousel.addEventListener("scroll", infiniteScroll);
         wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
         wrapper.addEventListener("mouseleave", autoPlay);
