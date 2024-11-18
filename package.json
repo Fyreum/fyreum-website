@@ -26,6 +26,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-node": "^4.0.1"
+		"@sveltejs/adapter-node": "^4.0.1",
+		"lucide-svelte": "^0.460.1"
 	}
 }

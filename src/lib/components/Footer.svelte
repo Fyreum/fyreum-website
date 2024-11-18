@@ -2,14 +2,14 @@
 
 </script>
 
-<div class="relative overflow-hidden h-2 w-full bg-white/10 text-black/50 border-t border-neutral-600/60">
+<div class="relative overflow-hidden h-2 w-full bg-white/10 text-black/50 border-t border-neutral-600/60 z-10">
     <div class="absolute left-0 -top-1/3 z-[-1] bg-purple-500/30 w-1/2 aspect-square rounded-full blur-[15rem] -translate-x-1/2 -translate-y-1/2"></div>
     <div class="absolute right-0 -bottom-1/3 z-[-1] bg-blue-500/35 w-1/2 aspect-square rounded-full blur-[15rem] translate-x-1/2 translate-y-1/2"></div>
 </div>
 
 <footer class="bg-black/90 border-t border-gray-600/60 text-lg">
     <div class="flex flex-col items-center mx-auto py-8">
-        <img class="size-10" src="/favicon_v2_light.png" alt="Logo">
+        <img class="size-10" src="/favicon.png" alt="Logo">
     </div>
 
     <div class="max-content px-6 py-8 flex flex-col md:flex-row gap-8 md:gap-3 w-full md:items-center md:justify-between border-y border-gray-600/60">

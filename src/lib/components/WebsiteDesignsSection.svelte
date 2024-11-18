@@ -1,7 +1,6 @@
 
 <script lang="ts">
     import revine from '$lib/images/revine_oppenheimer.png';
-    import erethon_icon from '$lib/images/home/erethon_icon.png';
     import erethon_homepage from '$lib/images/home/erethon_homepage.png';
     import statix_homepage from '$lib/images/home/statix_homepage.png';
     import statix_pricing from '$lib/images/home/statix_pricing.png';
@@ -23,8 +22,8 @@
                 </div>
             </div>
 
-            <div class="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-32">
-                <img src={erethon_icon} alt="Erethon Icon">
+            <div class="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-32 border-2 border-blue-500 shadow-lg bg-neutral-950/80 backdrop-blur-md p-2 rounded-3xl">
+                <img src="/favicon.png" alt="Fyreum Icon">
             </div>
 
             <div class="relative mx-auto w-full aspect-[3/2] pb-8 pr-8">

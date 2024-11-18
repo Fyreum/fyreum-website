@@ -47,7 +47,7 @@
 </div>
 
 {#if $open}
-    <div class="fixed top-0 left-0 w-screen h-screen flex items-center bg-black/90 backdrop-blur-sm z-40" in:fade={{duration: 120}} out:fade={{duration: 120}}>
+    <div class="fixed top-0 left-0 w-screen h-screen flex items-center bg-black/80 backdrop-blur-md z-40" in:fade={{duration: 120}} out:fade={{duration: 120}}>
         <div class="relative flex flex-col gap-3 w-full items-center p-4">
             <NavItem href="/#about" text="About"></NavItem>
             <NavItem href="/#projects" text="Projects"></NavItem>

@@ -4,7 +4,6 @@
     import javascriptPreview from "$lib/images/region-viewer.png";
     import nwPreview from "$lib/images/nw-website.png";
     import erethonPreview from "$lib/images/erethon-preview.png";
-    import todo from "$lib/images/todo_dark.png";
 
     let languages = [
         {
