@@ -7,6 +7,7 @@
 
 </script>
 
-<a class="unstyled-link text-xl text-blue-100 hover:bg-gray-100 hover:text-black transition-colors rounded-full px-4 py-0.5" {href} on:click={() => $open = false}>
+<a class="flex items-center gap-3 unstyled-link text-xl text-blue-100 hover:bg-gray-100 hover:text-black transition-colors rounded-full px-4 py-1" {href} on:click={() => $open = false}>
+    <slot />
     {text}
 </a>

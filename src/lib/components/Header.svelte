@@ -1,6 +1,7 @@
 <script lang="ts">
     import {onMount} from "svelte";
     import HeaderNavItem from "$lib/components/HeaderNavItem.svelte";
+    import {FolderCode, Mail, NotebookPen, User} from "lucide-svelte";
 
     onMount(() => {
         // @ts-ignore
@@ -24,9 +25,20 @@
             <span class="text-xl font-bold text-blue-100">Fyreum</span>
         </a>
 
-        <HeaderNavItem header="About" href="/#about"></HeaderNavItem>
-        <HeaderNavItem header="Projects" href="/#projects"></HeaderNavItem>
-        <HeaderNavItem header="Blogs" href="/#blogs"></HeaderNavItem>
-        <HeaderNavItem header="Contact" href="/#contact"></HeaderNavItem>
+        <HeaderNavItem header="About" href="/#about">
+            <User class="text-inherit h-5" />
+        </HeaderNavItem>
+
+        <HeaderNavItem header="Projects" href="/#projects">
+            <FolderCode class="text-inherit h-5" />
+        </HeaderNavItem>
+
+        <HeaderNavItem header="Blogs" href="/#blogs">
+            <NotebookPen class="text-inherit h-5" />
+        </HeaderNavItem>
+
+        <HeaderNavItem header="Contact" href="/#contact">
+            <Mail class="text-inherit h-5" />
+        </HeaderNavItem>
     </div>
 </nav>

@@ -54,7 +54,7 @@
     </div>
 
     <!-- Phone -->
-    <div class="w-[22rem] h-[44rem] glowing-card rounded-3xl bg-black border-[9px] border-gray-700 outline outline-1 outline-gray-500/75 -outline-offset-2">
+    <div id="phone" class="phone w-[22rem] h-[44rem] glowing-card rounded-3xl bg-black border-[9px] border-gray-700 outline outline-1 outline-gray-500/75 -outline-offset-2">
         <!-- Speaker -->
         <div class="absolute -top-[3px] left-1/2 -translate-x-1/2 rounded-full aspect-square h-2 w-16 bg-black border-t border-gray-500/70"></div>
 

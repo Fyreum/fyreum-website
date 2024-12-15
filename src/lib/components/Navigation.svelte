@@ -9,6 +9,7 @@
     import { messageBox } from "$lib/components/StartScreenSection.svelte";
     import { onMount } from "svelte";
     import { fade } from "svelte/transition";
+    import {FolderCode, Mail, NotebookPen, User} from "lucide-svelte";
 
     let toggleButton: HTMLDivElement;
 
@@ -48,11 +49,22 @@
 
 {#if $open}
     <div class="fixed top-0 left-0 w-screen h-screen flex items-center bg-black/80 backdrop-blur-md z-40" in:fade={{duration: 120}} out:fade={{duration: 120}}>
-        <div class="relative flex flex-col gap-3 w-full items-center p-4">
-            <NavItem href="/#about" text="About"></NavItem>
-            <NavItem href="/#projects" text="Projects"></NavItem>
-            <NavItem href="/#blogs" text="Blogs"></NavItem>
-            <NavItem href="/#contact" text="Contact"></NavItem>
+        <div class="relative flex flex-col gap-3 w-fit mx-auto p-4">
+            <NavItem href="/#about" text="About">
+                <User class="text-inherit h-5" />
+            </NavItem>
+
+            <NavItem href="/#projects" text="Projects">
+                <FolderCode class="text-inherit h-5" />
+            </NavItem>
+
+            <NavItem href="/#blogs" text="Blogs">
+                <NotebookPen class="text-inherit h-5" />
+            </NavItem>
+
+            <NavItem href="/#contact" text="Contact">
+                <Mail class="text-inherit h-5" />
+            </NavItem>
         </div>
     </div>
 {/if}
