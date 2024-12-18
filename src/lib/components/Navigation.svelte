@@ -41,7 +41,7 @@
     }
 </script>
 
-<div class="fixed right-10 bottom-10 z-50" bind:this={toggleButton}>
+<div class="lg:hidden fixed right-10 bottom-10 z-50" bind:this={toggleButton}>
     <button class="fill-blue-50 size-16 p-3 bg-gray-900 shadow-lg shadow-black/30 border border-gray-600/60 rounded-full transition-all active:scale-95" on:click={toggleOpen}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/></svg>
     </button>

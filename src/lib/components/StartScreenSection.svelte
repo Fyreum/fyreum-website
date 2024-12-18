@@ -33,13 +33,15 @@
         unlockTimeout = setTimeout(() => {
             displayLockscreen = false;
             displayAppscreen = true;
+
+            document.getElementById('phone-wrapper')?.classList.add('unlocked');
         }, 1000);
     }
 </script>
 
-<div class="flex flex-col items-center -mt-12 w-full h-screen justify-center">
+<div class="relative flex flex-col lg:items-center -mt-12 w-full h-screen justify-end 2xl:justify-center">
     <!-- Text top left -->
-    <div class="absolute left-14 top-1/3 -translate-y-1/2">
+    <div class="absolute left-14 top-20 lg:top-1/3 lg:-translate-y-1/2 z-20">
         <h1 class="text-6xl font-bold text-blue-100 tracking-tight">
             Hello, I'm <span class="gradient-text mr-0.5">Fyreum</span>.
         </h1>
@@ -53,73 +55,75 @@
         </button>
     </div>
 
-    <!-- Phone -->
-    <div id="phone" class="phone w-[22rem] h-[44rem] glowing-card rounded-3xl bg-black border-[9px] border-gray-700 outline outline-1 outline-gray-500/75 -outline-offset-2">
-        <!-- Speaker -->
-        <div class="absolute -top-[3px] left-1/2 -translate-x-1/2 rounded-full aspect-square h-2 w-16 bg-black border-t border-gray-500/70"></div>
+    <div id="phone-wrapper" class="phone-wrapper">
+        <!-- Phone -->
+        <div id="phone" class="mb-20 ml-20 mt-12 lg:ml-0 phone aspect-[1/2] h-[calc(44rem*var(--scale))] w-fit glowing-card rounded-[calc(1.5rem*var(--scale))] bg-black border-[calc(9px*var(--scale))] border-gray-700 outline outline-[calc(1px*var(--scale))] outline-gray-500/75 -outline-offset-[calc(2px*var(--scale))] [--scale:0.5] md:[--scale:0.65] xl:[--scale:0.75] 2xl:[--scale:1]">
+            <!-- Speaker -->
+            <div class="absolute -top-[calc(3px*var(--scale))] left-1/2 -translate-x-1/2 rounded-full aspect-square h-[calc(0.5rem*var(--scale))] w-[calc(4rem*var(--scale))] bg-black border-t border-gray-500/70"></div>
 
-        <!-- Display border -->
-        <div class="absolute inset-0.5 rounded-xl border-x bg-black border-l-gray-800 border-r-gray-500"></div>
+            <!-- Display border -->
+            <div class="absolute inset-[calc(2px*var(--scale))] rounded-[calc(0.75rem*var(--scale))] border-x-[calc(1px*var(--scale))] bg-black border-l-gray-800 border-r-gray-500"></div>
 
-        <!-- Display -->
-        <div id="display" class="absolute inset-2 rounded-lg bg-black overflow-hidden">
+            <!-- Display -->
+            <div id="display" class="absolute inset-[calc(0.5rem*var(--scale))] rounded-[calc(0.5rem*var(--scale))] bg-black overflow-hidden z-10">
 
-            <!-- Background image -->
-            <div id="background" class="size-full bg-cover bg-center transition-[background-image]" style="background-image: url('https://w0.peakpx.com/wallpaper/648/308/HD-wallpaper-wood-path-to-forest-iphone-for-phone-ma-live-mobile-phone-background-beautiful-night-forest-thumbnail.jpg')"></div>
+                <!-- Background image -->
+                <div id="background" class="size-full bg-cover bg-center transition-[background-image]" style="background-image: url('https://w0.peakpx.com/wallpaper/648/308/HD-wallpaper-wood-path-to-forest-iphone-for-phone-ma-live-mobile-phone-background-beautiful-night-forest-thumbnail.jpg')"></div>
 
-            <!-- top action bar (left) -->
-            {#if !displayLockscreen}
-                <div class="absolute h-4 flex items-center gap-1 left-4 top-1.5 fill-white">
-                    <span class="text-sm">{currentTime}</span>
+                <!-- top action bar (left) -->
+                {#if !displayLockscreen}
+                    <div class="absolute h-[calc(1rem*var(--scale))] flex items-center gap-[calc(0.25rem*var(--scale))] left-[calc(1rem*var(--scale))] top-[calc(0.375rem*var(--scale))]">
+                        <span class="text-sm">{currentTime}</span>
+                    </div>
+                {/if}
+                <!-- top action bar (right) -->
+                <div class="absolute h-[calc(1rem*var(--scale))] flex items-center gap-[calc(0.25rem*var(--scale))] right-[calc(1rem*var(--scale))] top-[calc(0.375rem*var(--scale))] text-gray-300 fill-gray-300">
+                    <WifiHigh class="h-full text-inherit" />
+                    <SignalHigh class="h-full text-inherit" />
+                    <BatteryFull class="h-full text-inherit" />
                 </div>
-            {/if}
-            <!-- top action bar (right) -->
-            <div class="absolute h-4 flex items-center gap-1 right-4 top-1.5 text-white fill-white">
-                <WifiHigh class="h-full text-inherit" />
-                <SignalHigh class="h-full text-inherit" />
-                <BatteryFull class="h-full text-green-500" />
+
+                {#if displayLockscreen}
+                    <div in:fade={{duration: 100}} out:fade={{duration: 80}}>
+
+                        <div id="lockscreen-info" class="absolute top-[calc(3.5rem*var(--scale))] left-[calc(1rem*var(--scale))] flex flex-col tracking-wide">
+                            <span class="text-[calc(3rem*var(--scale))] leading-none">{currentTime}</span>
+                            <span class="text-[calc(1.875rem*var(--scale))] leading-[calc(2.25rem*var(--scale))]">{currentDate}<span class="text-[calc(1.125rem*var(--scale))] leading-[calc(1.75rem*var(--scale))] text-gray-300/75 align-text-top ml-[calc(0.25rem*var(--scale))] uppercase">{currentDay.substring(0, 2)}</span></span>
+                            <span class="text-[calc(1.875rem*var(--scale))] leading-[calc(2.25rem*var(--scale))]">19<span class="text-gray-300/75">°</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Fingerprint -->
+                    <button id="fingerprint" class="absolute bottom-[calc(2rem*var(--scale))] left-1/2 -translate-x-1/2 rounded-full size-[calc(3rem*var(--scale))] border-[calc(0.25rem*var(--scale))] border-gray-300/70" on:mouseenter={unlock} on:mouseleave={() => clearTimeout(unlockTimeout)}>
+                        <div id="fingerprint-prompt" class="absolute flex w-full flex-col items-center gap-[calc(0.5rem*var(--scale))] -top-[calc(5rem*var(--scale))] transition-colors pointer-events-none">
+                            <div class="block rounded-full bg-gray-300/70 size-[calc(0.5rem*var(--scale))]"></div>
+                            <div class="block rounded-full bg-gray-300/70 size-[calc(0.5rem*var(--scale))]"></div>
+                            <div class="block rounded-full bg-gray-300/70 size-[calc(0.5rem*var(--scale))]"></div>
+                        </div>
+                    </button>
+                {/if}
+
+                {#if displayAppscreen}
+                    <div in:fade={{duration: 100}}>
+                        <div class="absolute bottom-[calc(1.5rem*var(--scale))] w-full grid grid-cols-4 gap-[calc(1rem*var(--scale))] text-black px-[calc(1.5rem*var(--scale))]">
+                            <div class="aspect-square bg-gray-500 p-[calc(0.25rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]"></div>
+                            <div class="aspect-square bg-gray-500 p-[calc(0.25rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]"></div>
+                            <div class="aspect-square bg-gray-500 p-[calc(0.25rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]"></div>
+                            <div class="aspect-square bg-gray-500 p-[calc(0.25rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]"></div>
+                        </div>
+                    </div>
+                {/if}
             </div>
 
-            {#if displayLockscreen}
-                <div in:fade={{duration: 100}} out:fade={{duration: 80}}>
-
-                    <div id="lockscreen-info" class="absolute top-14 left-4 flex flex-col tracking-wide">
-                        <span class="text-5xl">{currentTime}</span>
-                        <span class="text-3xl">{currentDate}<span class="text-lg text-gray-300/75 align-text-top ml-1 uppercase">{currentDay.substring(0, 2)}</span></span>
-                        <span class="text-3xl">19<span class="text-gray-300/75">°</span></span>
-                    </div>
-                </div>
-
-                <!-- Fingerprint -->
-                <button id="fingerprint" class="absolute bottom-8 left-1/2 -translate-x-1/2 rounded-full size-12 border-4 border-gray-300/70" on:mouseenter={unlock} on:mouseleave={() => clearTimeout(unlockTimeout)}>
-                    <div id="fingerprint-prompt" class="absolute flex w-full flex-col items-center gap-2 -top-20 transition-colors pointer-events-none">
-                        <div class="block rounded-full bg-gray-300/70 size-2"></div>
-                        <div class="block rounded-full bg-gray-300/70 size-2"></div>
-                        <div class="block rounded-full bg-gray-300/70 size-2"></div>
-                    </div>
-                </button>
-            {/if}
-
-            {#if displayAppscreen}
-                <div in:fade={{duration: 100}}>
-                    <div class="absolute bottom-6 w-full grid grid-cols-4 gap-4 text-black px-6">
-                        <div class="aspect-square bg-gray-500 p-1 rounded-xl"></div>
-                        <div class="aspect-square bg-gray-500 p-1 rounded-xl"></div>
-                        <div class="aspect-square bg-gray-500 p-1 rounded-xl"></div>
-                        <div class="aspect-square bg-gray-500 p-1 rounded-xl"></div>
-                    </div>
-                </div>
-            {/if}
+            <!-- Iris -->
+            <div class="absolute top-[calc(1rem*var(--scale))] left-1/2 -translate-x-1/2 rounded-full aspect-square h-[calc(1rem*var(--scale))] border-[calc(1px*var(--scale))] bg-black border-t-gray-400 border-r-gray-500 border-l-gray-600 border-b-gray-900"></div>
         </div>
-
-        <!-- Iris -->
-        <div class="absolute top-4 left-1/2 -translate-x-1/2 rounded-full aspect-square h-4 border bg-black border-t-gray-400 border-r-gray-500 border-l-gray-600 border-b-gray-900"></div>
     </div>
 
     <!-- Reminder top right -->
-    <div class="absolute right-16 top-1/3 -translate-y-1/2 flex items-end flex-col gap-4" bind:this={messageBox}>
+    <div class="absolute right-[calc(4rem*var(--scale))] top-[42%] lg:top-1/3 -translate-y-1/2 flex items-end flex-col gap-[calc(1rem*var(--scale))] z-20" bind:this={messageBox}>
         {#each $messages as message}
-            <div class="relative text-lg flex px-4 py-2 rounded-xl rounded-tr-none bg-gradient-to-r from-blue-700 to-blue-500 blue-message max-w-80 tracking-tight">
+            <div class="relative text-lg flex px-[calc(1rem*var(--scale))] py-[calc(0.5rem*var(--scale))] rounded-xl rounded-tr-none bg-gradient-to-r from-blue-700 to-blue-500 blue-message max-w-80 tracking-tight">
                 {message}
             </div>
         {/each}

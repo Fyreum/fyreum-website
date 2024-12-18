@@ -87,10 +87,28 @@ nav.sticking {
 }
 
 #fingerprint:hover:before {
-    @apply rounded-full absolute -inset-2 content-[''] bg-gray-100 blur-xl animate-pulse;
+    @apply rounded-full absolute -inset-[calc(0.5rem*var(--scale))] content-[''] bg-gray-100 blur-xl animate-pulse;
     animation-duration: 1s;
 }
 
+@property --scale {
+    syntax: '<number>';
+    initial-value: 1;
+    inherits: true;
+}
+
+.phone {
+    transition: all 0.5s linear, margin 0s;
+}
+
+.phone-wrapper {
+    @apply transition-transform duration-500;
+}
+
+.phone-wrapper.unlocked {
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(25deg);
+}
 
 /* Grids */
 
@@ -201,7 +219,7 @@ nav.sticking {
             theme("colors.glow.100")
     );
     animation: rotation 10s linear infinite;
-    @apply rounded-[inherit] z-[-1] content-[''] absolute -inset-[10px]; /* -inset-1.5 rounded-xl */
+    @apply rounded-[inherit] z-[-1] content-[''] absolute -inset-[calc(10px*var(--scale))]; /* -inset-1.5 rounded-xl */
 }
 
 .glowing-card:after {

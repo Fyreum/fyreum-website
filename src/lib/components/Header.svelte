@@ -37,7 +37,7 @@
             <NotebookPen class="text-inherit h-5" />
         </HeaderNavItem>
 
-        <HeaderNavItem header="Contact" href="/#contact">
+        <HeaderNavItem header="Contact" href="mailto:mail@fyreum.de">
             <Mail class="text-inherit h-5" />
         </HeaderNavItem>
     </div>
