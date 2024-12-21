@@ -3,6 +3,7 @@
     import LanguagesSection from "$lib/components/ProgrammingLanguagesSection.svelte";
     import BlogsBanner from "$lib/components/BlogsBanner.svelte";
     import WebsiteDesignsSection from "$lib/components/WebsiteDesignsSection.svelte";
+    import AboutSection from "$lib/components/AboutSection.svelte";
 </script>
 
 <svelte:head>
@@ -13,8 +14,10 @@
 
 <StartScreenSection />
 
-<BlogsBanner />
+<AboutSection />
 
 <WebsiteDesignsSection />
 
 <LanguagesSection />
+
+<BlogsBanner />

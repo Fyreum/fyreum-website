@@ -1,9 +1,33 @@
 <script>
-
+    import StackedCard from "$lib/components/StackedCard.svelte";
+    import {Calendar1, User} from "lucide-svelte";
 </script>
 
-<div id="about" class="z-10 relative flex flex-col w-full bg-black/50 border-t border-gray-600/60 p-4 gap-6 py-16 overflow-clip scroll-mt-16">
-    <h1 class="text-blue-100 text-4xl font-bold text-center">About me</h1>
+<div id="about" class="z-10 w-full bg-black/50 border-t border-gray-600/60 py-8 lg:py-12 overflow-clip scroll-mt-16">
+    <div class="relative max-content gradient-highlights">
+        <div class="relative grid sm:grid-cols-3 gap-8 rounded-3xl p-8 backdrop-blur-xl overflow-hidden">
+            <StackedCard />
 
+            <div class="sm:col-span-2 flex flex-col justify-center">
+                <h3 class="text-4xl text-blue-100 font-bold mb-4">About me</h3>
 
+                <div class="flex gap-2 items-center">
+                    <span class="flex gap-2 items-center px-2 rounded-md text-blue-400 border border-blue-700">
+                        <User class="text-inherit size-4" />
+                        He/Him
+                    </span>
+                    <span class="flex gap-2 items-center px-2 rounded-md text-purple-400 border border-purple-700">
+                        <Calendar1 class="text-inherit size-4" />
+                        {new Date(Date.now() - new Date(2003, 8, 26).getTime()).getFullYear() - 1970}
+                    </span>
+                </div>
+
+                <p class="mt-6 text-xl text-gray-400">
+                    I'm from Hamburg, Germany, and an Apprentice IT Specialist for Application Development in the
+                    field of E-Commerce. I love working on projects and learning new things! Thus I'm always looking for
+                    new ideas.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>

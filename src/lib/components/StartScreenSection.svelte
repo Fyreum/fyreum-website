@@ -41,7 +41,7 @@
 
 <div class="relative flex flex-col lg:items-center -mt-12 w-full h-screen justify-end 2xl:justify-center">
     <!-- Text top left -->
-    <div class="absolute left-14 top-20 lg:top-1/3 lg:-translate-y-1/2 z-20">
+    <div class="absolute left-14 top-20 lg:top-1/3 lg:-translate-y-1/2 z-20 pr-6">
         <h1 class="text-6xl font-bold text-blue-100 tracking-tight">
             Hello, I'm <span class="gradient-text mr-0.5">Fyreum</span>.
         </h1>

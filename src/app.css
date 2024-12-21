@@ -38,13 +38,13 @@ a:not(.ignore-external)[target="_blank"]::after {
         @apply text-4xl font-bold py-4;
     }
     h2 {
-        @apply text-3xl font-bold py-3;
+        @apply text-3xl font-bold py-4;
     }
     h3 {
-        @apply text-2xl font-bold py-2;
+        @apply text-2xl font-bold py-3;
     }
     p {
-        @apply py-1.5;
+        @apply py-2 text-gray-400;
     }
 }
 
@@ -136,8 +136,20 @@ nav.sticking {
     mask-image: linear-gradient(to bottom, #000, transparent 100%);
 }
 
+.fade-out-bottom-2 {
+    mask-image: linear-gradient(to bottom, #000 50%, transparent 100%);
+}
+
 .fade-out-top {
     mask-image: linear-gradient(to top, #000, transparent 100%);
+}
+
+.fade-out-left {
+    mask-image: linear-gradient(to left, #000, transparent 100%);
+}
+
+.fade-out-right {
+    mask-image: linear-gradient(to right, #000, transparent 100%);
 }
 
 /* Patterns */
@@ -152,10 +164,6 @@ nav.sticking {
 
 .max-content {
     @apply max-w-[1200px] w-full mx-auto;
-}
-
-.max-text {
-    @apply max-w-[600px] w-full mx-auto;
 }
 
 /* Glass bg */
@@ -184,12 +192,25 @@ nav.sticking {
     @apply bg-red-500/25 border-red-500;
 }
 
+/* Gradient stuff */
+
 .gradient-text {
     background: linear-gradient(90deg, theme("colors.glow.100"), theme("colors.glow.300"));
     @apply text-transparent bg-clip-text;
 }
 
-/* Gradient stuff */
+.gradient-highlights::before,
+.gradient-highlights::after {
+    @apply absolute z-[-1] w-1/2 aspect-square rounded-full blur-[15rem] content-[''];
+}
+
+.gradient-highlights::before {
+    @apply left-0 -top-1/3 bg-purple-500/30 -translate-x-1/2 -translate-y-1/2;
+}
+
+.gradient-highlights::after {
+    @apply right-0 -bottom-1/3 bg-blue-500/35 translate-x-1/2 translate-y-1/2;
+}
 
 .gradient-border {
     background: conic-gradient(
@@ -223,8 +244,7 @@ nav.sticking {
 }
 
 .glowing-card:after {
-    /*filter: blur(3.5rem);*/
-    @apply blur-[5rem];
+    @apply blur-[3.5rem] md:blur-[5rem];
 }
 
 /* Rotation */

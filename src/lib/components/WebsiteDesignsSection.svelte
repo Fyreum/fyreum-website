@@ -6,10 +6,7 @@
     import statix_pricing from '$lib/images/home/statix_pricing.png';
 </script>
 
-<div id="projects" class="relative w-full py-12 bg-white/10 border-t border-gray-600/60 overflow-clip scroll-mt-16">
-    <div class="absolute left-0 -top-1/3 z-[-1] bg-purple-500/30 w-1/2 aspect-square rounded-full blur-[15rem] -translate-x-1/2 -translate-y-1/2"></div>
-    <div class="absolute right-0 -bottom-1/3 z-[-1] bg-blue-500/35 w-1/2 aspect-square rounded-full blur-[15rem] translate-x-1/2 translate-y-1/2"></div>
-
+<div id="projects" class="relative w-full py-12 bg-white/10 border-t border-gray-600/60 overflow-clip scroll-mt-16 gradient-highlights">
     <div class="max-content">
         <h1 class="text-blue-100 text-4xl font-bold text-center mb-6">Website Designs</h1>
 
@@ -22,7 +19,7 @@
                 </div>
             </div>
 
-            <div class="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-16 sm:size-24 md:size-32 border-2 border-blue-500 shadow-lg bg-neutral-950/80 backdrop-blur-md p-2 rounded-2xl sm:rounded-3xl">
+            <div class="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square w-[10.75%] border-2 border-blue-500 shadow-lg bg-neutral-950/80 backdrop-blur-md p-[0.75%] rounded-[20%]">
                 <img src="/favicon.png" alt="Fyreum Icon">
             </div>
 
