@@ -57,7 +57,7 @@
 
     <div id="phone-wrapper" class="phone-wrapper">
         <!-- Phone -->
-        <div id="phone" class="mb-20 ml-20 mt-12 lg:ml-0 phone aspect-[1/2] h-[calc(44rem*var(--scale))] w-fit glowing-card rounded-[calc(1.5rem*var(--scale))] bg-black border-[calc(9px*var(--scale))] border-gray-700 outline outline-[calc(1px*var(--scale))] outline-gray-500/75 -outline-offset-[calc(2px*var(--scale))] [--scale:0.5] md:[--scale:0.65] xl:[--scale:0.75] 2xl:[--scale:1]">
+        <div id="phone" class="mb-20 ml-20 mt-12 lg:ml-0 phone aspect-[1/2] h-[calc(44rem*var(--scale))] w-fit glowing-card rounded-[calc(1.5rem*var(--scale))] bg-black border-[calc(9px*var(--scale))] border-gray-700 outline outline-[calc(1px*var(--scale))] outline-gray-500/75 -outline-offset-[calc(2px*var(--scale))] [--scale:0.4] md:[--scale:0.65] xl:[--scale:0.75] 2xl:[--scale:1]">
             <!-- Speaker -->
             <div class="absolute -top-[calc(3px*var(--scale))] left-1/2 -translate-x-1/2 rounded-full aspect-square h-[calc(0.5rem*var(--scale))] w-[calc(4rem*var(--scale))] bg-black border-t border-gray-500/70"></div>
 
@@ -121,7 +121,7 @@
     </div>
 
     <!-- Reminder top right -->
-    <div class="absolute right-[calc(4rem*var(--scale))] top-[42%] lg:top-1/3 -translate-y-1/2 flex items-end flex-col gap-[calc(1rem*var(--scale))] z-20" bind:this={messageBox}>
+    <div class="absolute right-[calc(4rem*var(--scale))] top-1/2 lg:top-1/3 -translate-y-1/2 flex items-end flex-col gap-[calc(1rem*var(--scale))] z-20 pl-4" bind:this={messageBox}>
         {#each $messages as message}
             <div class="relative text-lg flex px-[calc(1rem*var(--scale))] py-[calc(0.5rem*var(--scale))] rounded-xl rounded-tr-none bg-gradient-to-r from-blue-700 to-blue-500 blue-message max-w-80 tracking-tight">
                 {message}
