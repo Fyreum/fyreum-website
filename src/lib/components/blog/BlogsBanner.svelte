@@ -1,7 +1,7 @@
 <script lang="ts">
     /*import blogsPreview from '$lib/images/home/blogs-preview.webp';*/
-    import BlogPreviewCard from "$lib/components/BlogPreviewCard.svelte";
-    import VisitBlogsCard from "$lib/components/VisitBlogsCard.svelte";
+    import BlogPreviewCard from "$lib/components/blog/BlogPreviewCard.svelte";
+    import VisitBlogsCard from "$lib/components/blog/VisitBlogsCard.svelte";
 </script>
 
 
@@ -9,7 +9,7 @@
     <h1 class="text-blue-100 text-4xl font-bold text-center">Blogs</h1>
 
     <p class="text-gray-400 text-xl text-center">
-        You can find all the blogs I have published so far, here.
+        You can find a list of blogs I have published so far, here.
     </p>
 
     <!--<img class="absolute z-[-1] right-[21%] -bottom-32 rotate-6 flex w-56 aspect-[3/4] object-cover object-[25%] rounded-lg overflow-hidden shadow-md fade-out-bottom" src={blogsPreview} alt="Blogs preview">-->

@@ -102,12 +102,24 @@ nav.sticking {
 }
 
 .phone-wrapper {
-    @apply transition-transform duration-500;
+    /*@apply transition-transform duration-500;*/
 }
 
 .phone-wrapper.unlocked {
     transform-style: preserve-3d;
-    transform: perspective(1000px) rotateX(25deg);
+    animation: rotateX 1.5s ease-in-out;
+}
+
+@keyframes rotateX {
+    0% {
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    33% {
+        transform: perspective(1000px) rotateX(25deg);
+    }
+    75% {
+        transform: perspective(1000px) rotateX(25deg);
+    }
 }
 
 /* Grids */

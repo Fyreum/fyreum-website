@@ -5,7 +5,7 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
     import {writable} from "svelte/store";
-    import {BatteryFull, SignalHigh, WifiHigh} from "lucide-svelte";
+    import {BatteryFull, Camera, Contact, Phone, Settings, SignalHigh, WifiHigh} from "lucide-svelte";
 
     let displayLockscreen: boolean = true; // todo: true
     let displayAppscreen: boolean = false; // todo: false
@@ -55,7 +55,7 @@
         </button>
     </div>
 
-    <div id="phone-wrapper" class="phone-wrapper">
+    <div id="phone-wrapper" class="relative phone-wrapper">
         <!-- Phone -->
         <div id="phone" class="mb-20 ml-20 mt-12 lg:ml-0 phone aspect-[1/2] h-[calc(44rem*var(--scale))] w-fit glowing-card rounded-[calc(1.5rem*var(--scale))] bg-black border-[calc(9px*var(--scale))] border-gray-700 outline outline-[calc(1px*var(--scale))] outline-gray-500/75 -outline-offset-[calc(2px*var(--scale))] [--scale:0.4] md:[--scale:0.65] xl:[--scale:0.75] 2xl:[--scale:1]">
             <!-- Speaker -->
@@ -104,12 +104,20 @@
                 {/if}
 
                 {#if displayAppscreen}
-                    <div in:fade={{duration: 100}}>
-                        <div class="absolute bottom-[calc(1.5rem*var(--scale))] w-full grid grid-cols-4 gap-[calc(1rem*var(--scale))] text-black px-[calc(1.5rem*var(--scale))]">
-                            <div class="aspect-square bg-gray-500 p-[calc(0.25rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]"></div>
-                            <div class="aspect-square bg-gray-500 p-[calc(0.25rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]"></div>
-                            <div class="aspect-square bg-gray-500 p-[calc(0.25rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]"></div>
-                            <div class="aspect-square bg-gray-500 p-[calc(0.25rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]"></div>
+                    <div>
+                        <div class="absolute bottom-[calc(1.5rem*var(--scale))] w-full grid grid-cols-4 gap-[calc(1rem*var(--scale))]  px-[calc(1.5rem*var(--scale))] text-blue-100">
+                            <div class="aspect-square bg-gradient-to-br from-gray-600 to-gray-800 -outline-offset-2 outline outline-2 outline-black/50 p-[calc(0.75rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]" in:fade={{delay: 500}}>
+                                <Settings class="size-full text-inherit" />
+                            </div>
+                            <div class="aspect-square bg-gradient-to-br from-stone-600 to-stone-800 -outline-offset-2 outline outline-2 outline-black/50 p-[calc(0.75rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]" in:fade={{delay: 600}}>
+                                <Phone class="size-full text-inherit" />
+                            </div>
+                            <div class="aspect-square bg-gradient-to-br from-slate-600 to-slate-800 -outline-offset-2 outline outline-2 outline-black/50 p-[calc(0.75rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]" in:fade={{delay: 700}}>
+                                <Contact class="size-full text-inherit" />
+                            </div>
+                            <div class="aspect-square bg-gradient-to-br from-zinc-600 to-zinc-800 -outline-offset-2 outline outline-2 outline-black/50 p-[calc(0.75rem*var(--scale))] rounded-[calc(0.75rem*var(--scale))]" in:fade={{delay: 800}}>
+                                <Camera class="size-full text-inherit" />
+                            </div>
                         </div>
                     </div>
                 {/if}

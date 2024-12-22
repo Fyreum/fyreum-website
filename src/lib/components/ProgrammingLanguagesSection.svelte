@@ -105,7 +105,7 @@
 
         const dragStart = (e: DragEvent) => {
             if (isDragging) return; // if isDragging is true return from here
-            console.log("dragStart");
+
             isDragging = true;
             carousel.classList.add("dragging");
             // Records the initial cursor and scroll position of the carousel
@@ -125,7 +125,6 @@
             }
             isDragging = false;
             carousel.classList.remove("dragging");
-            setCurrentLanguage(modL(Math.floor(carousel.scrollLeft / firstCardWidth) - languages.length + (cardPerView > 1 ? 1 : -1)));
         }
 
         const infiniteScroll = () => {
@@ -162,6 +161,10 @@
         }
         highlightCurrentLanguage();
 
+        const calculateAndSetCurrentLanguage = () => {
+            setCurrentLanguage(modL(Math.floor(carousel.scrollLeft / firstCardWidth) - languages.length + (cardPerView > 1 ? 1 : -1)));
+        }
+
         const animateLanguagePreview = () => {
             detailsAnimation.play();
             setTimeout(() => {
@@ -184,6 +187,7 @@
         carousel.addEventListener("mousemove", dragging);
         document.addEventListener("mouseup", dragStop);
         document.addEventListener("touchend", dragStop);
+        carousel.addEventListener("scrollend", calculateAndSetCurrentLanguage);
         carousel.addEventListener("scroll", infiniteScroll);
         wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
         wrapper.addEventListener("mouseleave", autoPlay);
@@ -215,7 +219,7 @@
         <h2 class="text-blue-100 text-4xl font-bold">
             Programming Languages
         </h2>
-        <p class="text-gray-400 text-xl max-w-[40rem]">
+        <p class="text-gray-400 text-xl max-w-[40rem] px-4">
             These are the programming languages & frameworks I worked with over the years, paired with some example projects.
         </p>
     </div>

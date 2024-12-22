@@ -1,6 +1,6 @@
 <script>
     import StackedCard from "$lib/components/StackedCard.svelte";
-    import {Calendar1, User} from "lucide-svelte";
+    import {Cake, User} from "lucide-svelte";
 </script>
 
 <div id="about" class="z-10 w-full bg-black/50 border-t border-gray-600/60 py-8 lg:py-12 overflow-clip scroll-mt-16">
@@ -17,15 +17,15 @@
                         He/Him
                     </span>
                     <span class="flex gap-2 items-center px-2 rounded-md text-purple-400 border border-purple-700">
-                        <Calendar1 class="text-inherit size-4" />
+                        <Cake class="text-inherit size-4" />
                         {new Date(Date.now() - new Date(2003, 8, 26).getTime()).getFullYear() - 1970}
                     </span>
                 </div>
 
                 <p class="mt-6 text-xl text-gray-400">
                     I'm from Hamburg, Germany, and an Apprentice IT Specialist for Application Development in the
-                    field of E-Commerce. I love working on projects and learning new things! Thus I'm always looking for
-                    new ideas.
+                    field of E-Commerce. I love working on projects and learning new things! And thus, I'm always looking
+                    for new ideas.
                 </p>
             </div>
         </div>
