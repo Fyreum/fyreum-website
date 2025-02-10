@@ -3,12 +3,12 @@
     import {Cake, User} from "lucide-svelte";
 </script>
 
-<div id="about" class="z-10 w-full bg-black/50 border-t border-gray-600/60 py-8 lg:py-12 overflow-clip scroll-mt-16">
-    <div class="relative max-content gradient-highlights">
-        <div class="relative grid sm:grid-cols-3 gap-8 rounded-3xl p-8 backdrop-blur-xl overflow-hidden">
+<div id="about" class="z-10 w-full bg-black/50 border-t border-gray-600/60 py-8 lg:py-12 overflow-clip scroll-mt-16 backdrop-blur-xl">
+    <div class="relative max-content gradient-highlights before:!bg-purple-500/25 after:!bg-blue-500/30">
+        <div class="relative grid sm:grid-cols-3 gap-8 rounded-3xl p-8 overflow-hidden">
             <StackedCard />
 
-            <div class="sm:col-span-2 flex flex-col justify-center">
+            <div class="sm:col-span-2 flex flex-col justify-center text-center items-center sm:items-start sm:text-start">
                 <h3 class="text-4xl text-blue-100 font-bold mb-4">About me</h3>
 
                 <div class="flex gap-2 items-center">
@@ -22,7 +22,7 @@
                     </span>
                 </div>
 
-                <p class="mt-6 text-xl text-gray-400">
+                <p class="mt-6 text-xl text-slate-400">
                     I'm from Hamburg, Germany, and an Apprentice IT Specialist for Application Development in the
                     field of E-Commerce. I love working on projects and learning new things! And thus, I'm always looking
                     for new ideas.

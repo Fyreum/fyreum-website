@@ -44,7 +44,7 @@ a:not(.ignore-external)[target="_blank"]::after {
         @apply text-2xl font-bold py-3;
     }
     p {
-        @apply py-2 text-gray-400;
+        @apply py-2 text-slate-400;
     }
 }
 
@@ -80,6 +80,14 @@ nav.sticking {
     @apply absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rotate-45 content-[''] border-8 border-transparent border-r-blue-500 size-4;
 }
 
+.blue-message-2 {
+    animation: slide-in-2 0.15s ease-out;
+}
+
+.blue-message-2:after {
+    @apply absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 -rotate-45 content-[''] border-8 border-transparent border-l-blue-500 size-4;
+}
+
 /* Phone */
 
 #fingerprint:hover {
@@ -97,29 +105,21 @@ nav.sticking {
     inherits: true;
 }
 
+@property --translate {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: false;
+}
+
 .phone {
     transition: all 0.5s linear, margin 0s;
 }
 
-.phone-wrapper {
-    /*@apply transition-transform duration-500;*/
-}
-
-.phone-wrapper.unlocked {
-    transform-style: preserve-3d;
-    animation: rotateX 1.5s ease-in-out;
-}
-
-@keyframes rotateX {
-    0% {
-        transform: perspective(1000px) rotateX(0deg);
-    }
-    33% {
-        transform: perspective(1000px) rotateX(25deg);
-    }
-    75% {
-        transform: perspective(1000px) rotateX(25deg);
-    }
+@media screen and (min-width: 768px) {
+    .phone-wrapper {
+         /*@apply transition-transform duration-500;*/
+         transform: translateX(var(--translate)) perspective(1000px) rotateX(15deg) rotateY(-9deg)
+     }
 }
 
 /* Grids */
@@ -162,6 +162,19 @@ nav.sticking {
 
 .fade-out-right {
     mask-image: linear-gradient(to right, #000, transparent 100%);
+}
+
+@property --lang-url {
+    syntax: '<url>';
+    initial-value: '';
+    inherits: false;
+}
+
+.language-mask {
+    mask-image: var(--lang-url);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
 }
 
 /* Patterns */
@@ -335,6 +348,12 @@ nav.sticking {
     inherits: false;
 }
 
+@property --language-color-2 {
+    syntax: '<color>';
+    initial-value: #000;
+    inherits: true;
+}
+
 @media screen and (max-width: 900px) {
     .wrapper .carousel {
         grid-auto-columns: calc((100% / 1) - 9px);
@@ -423,6 +442,17 @@ nav.sticking {
     }
 }
 
+@keyframes slide-in-2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .animate-language {
     animation: breathe linear 150ms;
 }
@@ -433,5 +463,18 @@ nav.sticking {
     }
     55% {
         opacity: 0;
+    }
+}
+
+.animate-border-b {
+    animation: border-b 4s infinite ease-in-out;
+}
+
+@keyframes border-b {
+    0%, 100% {
+        border-bottom-color: var(--language-color-2);
+    }
+    50% {
+        border-bottom-color: var(--language-color);
     }
 }

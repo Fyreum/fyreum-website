@@ -1,48 +1,56 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import php from "$lib/images/favicons/php.png";
     import phpPreview from "$lib/images/todo_dark.png";
+    import java from "$lib/images/favicons/java.png";
+    import javascript from "$lib/images/favicons/javascript.png";
     import javascriptPreview from "$lib/images/region-viewer.png";
+    import svelte from "$lib/images/favicons/svelte.png";
     import nwPreview from "$lib/images/nw-website.png";
+    import erethonFavicon from "$lib/images/favicons/erethon.ico";
     import erethonPreview from "$lib/images/erethon-preview.png";
 
     let languages = [
         {
             name: "JS/TypeScript",
-            text: "Das ist JS",
-            image: "/javascript.png",
+            href: "",
+            image: javascript,
             previewImage: javascriptPreview,
             previewName: "Factions Region Viewer",
-            previewDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias harum adipisci fugit rerum quasi placeat exercitationem ea voluptates nostrum quaerat dolorum nulla eligendi soluta, natus impedit explicabo, quia sequi deserunt!",
+            previewDesc: "A web application to view the regions of a Minecraft factions server. The regions are displayed on a map and can be filtered by their properties. Regions can be edited through brushes and tools.",
             color: "#f7df1e",
+            langColor: "#f7df1e",
         },
         {
             name: "Java",
-            text: "Das ist Java",
-            image: "/java.png",
+            href: "https://erethon.de",
+            image: java,
             previewImage: erethonPreview,
             previewName: "Erethon Server",
-            previewDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias harum adipisci fugit rerum quasi placeat exercitationem ea voluptates nostrum quaerat dolorum nulla eligendi soluta, natus impedit explicabo, quia sequi deserunt!",
+            previewDesc: "A medieval themed Minecraft server with custom server plugins and an unique world. The server is still in development and will be released soon.",
             color: "#007396",
+            langColor: "#007396",
         },
         {
             name: "PHP",
-            text: "Das ist PHP",
-            image: "/php.png",
+            href: "",
+            image: php,
             previewImage: phpPreview,
             previewName: "ToDo-App in the Browser",
-            previewDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias harum adipisci fugit rerum quasi placeat exercitationem ea voluptates nostrum quaerat dolorum nulla eligendi soluta, natus impedit explicabo, quia sequi deserunt!",
+            previewDesc: "The classic: A simple ToDo-App with a dark theme and a minimalistic design. The app is built with PHP/JavaScript and stores the tasks in the browser.",
             color: "#777bb4",
+            langColor: "#777bb4",
             padding: "0.5rem",
         },
         {
             name: "Svelte",
-            text: "Das ist Svelte",
-            image: "/svelte.png",
+            href: "https://niclaswittenburg.de",
+            image: svelte,
             previewImage: nwPreview,
             previewName: "Portfolio Website",
-            previewDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias harum adipisci fugit rerum quasi placeat exercitationem ea voluptates nostrum quaerat dolorum nulla eligendi soluta, natus impedit explicabo, quia sequi deserunt!",
+            previewDesc: "A minimalistic portfolio website with a light theme and round design elements. Built to showcase a resumé and recommendations.",
             color: "#ff3e00",
-            padding: "0.25rem",
+            langColor: "#ff3e00",
         },
     ];
     let currentLanguage = 0;
@@ -219,7 +227,7 @@
         <h2 class="text-blue-100 text-4xl font-bold">
             Programming Languages
         </h2>
-        <p class="text-gray-400 text-xl max-w-[40rem] px-4">
+        <p class="text-slate-400 text-xl max-w-[40rem] px-4">
             These are the programming languages & frameworks I worked with over the years, paired with some example projects.
         </p>
     </div>
@@ -239,48 +247,47 @@
             </ul>
             <i id="right" class="fill-gray-400 p-1 z-20 hover:fill-blue-200 right-0 sm:right-[-22px]">
                 <svg class="translate-x-[5%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M517.85-480 354.92-642.92q-8.3-8.31-8.5-20.89-.19-12.57 8.5-21.27 8.7-8.69 21.08-8.69 12.38 0 21.08 8.69l179.77 179.77q5.61 5.62 7.92 11.85 2.31 6.23 2.31 13.46t-2.31 13.46q-2.31 6.23-7.92 11.85L397.08-274.92q-8.31 8.3-20.89 8.5-12.57.19-21.27-8.5-8.69-8.7-8.69-21.08 0-12.38 8.69-21.08L517.85-480Z"/></svg>
-            </i><!--
-            <div class="flex mt-4 gap-3 w-fit mx-auto">
-                {#each languages as _, i}
-                    <button id="language-circle-{i}"
-                            class="rounded-full size-2 cursor-pointer transition-all duration-300 {currentLanguage === i ? 'scale-125' : ''}"
-                         style="background-color: {currentLanguage === i ? languages[modL(currentLanguageFixed)].color : 'rgb(71 85 105 / var(&#45;&#45;tw-bg-opacity))'}">
-
-                    </button>
-                {/each}
-            </div>-->
+            </i>
         </div>
     </div>
 
     <div class="max-content py-16 px-6 grid md:grid-cols-2 gap-6 md:gap-8 place-items-center">
         <img class="rounded-xl bg-slate-700 aspect-video w-full shadow-lg object-cover object-center"
              alt="ToDo-App" bind:this={languageDetails}
-             src={previewSrc}>
+             src={previewSrc}
+             style="box-shadow: 0 0 75px 0 {languages[currentLanguageFixed].color}44">
 
-        <div class="">
-            <h3 class="flex items-center gap-2 text-2xl font-bold text-blue-100">
-                {languages[modL(currentLanguageFixed)].previewName}
+        <div class="flex flex-col items-center sm:block">
+            <h3 class="flex flex-col sm:flex-row text-center sm:text-left items-center gap-3 sm:gap-2 text-2xl font-bold text-blue-100 mb-3 sm:mb-0">
+                {languages[currentLanguageFixed].previewName}
 
                 <span class="px-3 rounded-md text-base text-blue-100"
-                      style="border: 2px solid {languages[modL(currentLanguageFixed)].color}; background-color: {languages[modL(currentLanguageFixed)].color}33">
-                    {languages[modL(currentLanguageFixed)].name}
+                      style="border: 2px solid {languages[currentLanguageFixed].langColor}; background-color: {languages[currentLanguageFixed].langColor}33">
+                    {languages[currentLanguageFixed].name}
                 </span>
             </h3>
 
-            <p class="text-lg text-blue-100 mt-4">
-                {languages[modL(currentLanguageFixed)].previewDesc}
+            <p class="text-lg text-slate-400 mt-4">
+                {languages[currentLanguageFixed].previewDesc}
             </p>
 
-            <button class="bg-blue-100 rounded-full px-4 py-1.5 text-neutral-800 mt-8 font-bold transition-all hover:brightness-[85%]">
-                Click me
-            </button>
+            {#if languages[currentLanguageFixed].href !== ''}
+                <a class="inline-block bg-blue-100 rounded-full px-4 py-1.5 text-neutral-800 mt-8 font-bold transition-all hover:brightness-[85%] unstyled-link"
+                   href="{languages[currentLanguageFixed].href}">
+                    Visit Project
+                </a>
+            {:else}
+                <button class="bg-blue-100 rounded-full px-4 py-1.5 text-neutral-800 mt-8 font-bold transition-all hover:brightness-[85%] disabled:hover:brightness-100 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                    Coming soon
+                </button>
+            {/if}
         </div>
     </div>
     <div class="flex -translate-y-8 pb-8 gap-3 w-fit mx-auto">
         {#each languages as _, i}
             <button id="language-circle-{i}"
                     class="rounded-full size-2 cursor-pointer transition-all duration-300 {currentLanguage === i ? 'scale-125' : ''}"
-                    style="background-color: {currentLanguage === i ? languages[modL(currentLanguageFixed)].color : 'rgb(71 85 105 / var(--tw-bg-opacity))'}"
+                    style="background-color: {currentLanguage === i ? languages[currentLanguageFixed].color : 'rgb(71 85 105 / var(--tw-bg-opacity))'}"
                     on:click={() => setCurrentLanguageTo(i)}>
             </button>
         {/each}

@@ -42,7 +42,7 @@
                 References
             </h3>
 
-            <a class="footer-item unstyled-link" href="https://github.com/Fyreum/fyreum-website" target="_blank">See on GitHub</a>
+            <a class="footer-item unstyled-link" href="https://github.com/Fyreum/fyreum-website" target="_blank">Visit on GitHub</a>
             <a class="footer-item unstyled-link" href="https://kit.svelte.dev" target="_blank">SvelteKit</a>
             <a class="footer-item unstyled-link" href="https://tailwindcss.com" target="_blank">TailwindCSS</a>
         </div>

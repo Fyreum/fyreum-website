@@ -22,6 +22,7 @@ export default {
       },
       screens: {
         'sm-max': { 'max': '640px' },
+        'xs': { 'min': '400px' },
       },
       boxShadow: {
         'glow': '0px 3px 8px -2px theme("colors.dark-2")',
