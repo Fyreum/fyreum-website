@@ -59,7 +59,7 @@
             Click me
         </button>
 
-        <div class="mt-12 grid grid-cols-5 xs:flex items-center gap-3">
+        <div class="mt-9 xs:mt-12 grid grid-cols-5 xs:flex items-center gap-3">
             <div class="group relative aspect-square xs:size-14 cursor-help bg-black/50 border-2 border-gray-700/60 border-b-blue-500 p-2 rounded-lg shadow-lg shadow-blue-500/20 hover:shadow-blue-500/50 motion-reduce:animate-none animate-border-b [--language-color-2:#3b82f699] [--language-color:#3b82f6]">
                 <div class="size-full language-mask bg-blue-100 [--lang-url:url(/java.png)] transition-colors group-hover:bg-blue-500"></div>
 
@@ -101,7 +101,7 @@
 
     <div id="phone-wrapper" class="absolute -translate-x-1/2 md:[--translate:-50%] left-1/2 md:right-1/3 lg:[--translate:50%] phone-wrapper">
         <!-- Phone -->
-        <div id="phone" class="phone aspect-[1/2] mb-20 mt-12 h-[calc(44rem*var(--scale))] w-fit glowing-card rounded-[calc(1.5rem*var(--scale))] bg-black border-[calc(9px*var(--scale))] border-gray-700 outline outline-[calc(1px*var(--scale))] outline-gray-500/75 -outline-offset-[calc(2px*var(--scale))] [--scale:0.45] xs:[--scale:0.55] sm:![--scale:0.6] md:![--scale:0.65] xl:![--scale:0.75] 2xl:![--scale:0.9]">
+        <div id="phone" class="phone aspect-[1/2] mb-20 mt-12 h-[calc(44rem*var(--scale))] w-fit glowing-card rounded-[calc(1.5rem*var(--scale))] bg-black border-[calc(9px*var(--scale))] border-gray-700 outline outline-[calc(1px*var(--scale))] outline-gray-500/75 -outline-offset-[calc(2px*var(--scale))] [--scale:0.4] xs:[--scale:0.5] sm:![--scale:0.6] md:![--scale:0.65] xl:![--scale:0.75] 2xl:![--scale:0.9]">
             <!-- Speaker -->
             <div class="absolute -top-[calc(3px*var(--scale))] left-1/2 -translate-x-1/2 rounded-full aspect-square h-[calc(0.5rem*var(--scale))] w-[calc(4rem*var(--scale))] bg-black border-t border-gray-500/70"></div>
 
