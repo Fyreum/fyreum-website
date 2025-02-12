@@ -176,7 +176,7 @@
         const animateLanguagePreview = () => {
             detailsAnimation.play();
             setTimeout(() => {
-                previewSrc = languages[modL(currentLanguage + 1)].previewImage;
+                previewSrc = languages[currentLanguageFixed].previewImage;
             }, 150);
         }
 
