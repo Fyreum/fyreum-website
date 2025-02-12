@@ -107,7 +107,7 @@
         arrowBtns.forEach(btn => {
             btn.addEventListener("click", () => {
                 carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
-                //setCurrentLanguage(mod(btn.id == "left" ? currentLanguage - 1 : currentLanguage + 1, languages.length));
+                setCurrentLanguage(mod(btn.id == "left" ? currentLanguage - 1 : currentLanguage + 1, languages.length), false);
             });
         });
 
@@ -154,11 +154,14 @@
             if (!wrapper.matches(":hover")) autoPlay();
         }
 
-        const setCurrentLanguage = (language: number) => {
+        const setCurrentLanguage = (language: number, updateImageSrc: boolean = true) => {
             currentLanguage = language;
             currentLanguageFixed = modL(cardPerView > 1 ? language + 1 : language);
             highlightCurrentLanguage();
-            animateLanguagePreview();
+
+            if (updateImageSrc) {
+                animateLanguagePreview();
+            }
         }
 
         const highlightCurrentLanguage = () => {
