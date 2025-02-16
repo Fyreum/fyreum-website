@@ -14,6 +14,6 @@
     }
 </script>
 
-<span class="rounded-md px-2 text-white border {css} bg-opacity-30 backdrop-brightness-50">
+<span class="rounded-md px-2 text-white border-2 {css} bg-opacity-40 backdrop-brightness-75">
     {name}
 </span>

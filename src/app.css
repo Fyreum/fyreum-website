@@ -56,7 +56,7 @@ nav {
 
 nav.sticking {
     #nav-wrapper {
-        @apply bg-black/90 shadow-lg border-b border-gray-600/60;
+        @apply bg-black/90 shadow-lg border-b border-gray-600/60 backdrop-blur-sm;
     }
 
     /*& .nav-item {
@@ -189,32 +189,6 @@ nav.sticking {
 
 .max-content {
     @apply max-w-[1200px] w-full mx-auto;
-}
-
-/* Glass bg */
-
-.glass-bg {
-    @apply backdrop-blur bg-dark-2/[0.3] border border-dark-2/[0.3] shadow-[0_4px_30px_rgb(0,0,0,0.1)];
-}
-
-/* Mono Tags */
-
-.mono-tag-red,
-.mono-tag-green,
-.mono-tag-blue {
-    @apply px-2 font-mono rounded-lg border;
-}
-
-.mono-tag-blue {
-    @apply bg-blue-500/25 border-blue-500;
-}
-
-.mono-tag-green {
-    @apply bg-green-500/25 border-green-500;
-}
-
-.mono-tag-red {
-    @apply bg-red-500/25 border-red-500;
 }
 
 /* Gradient stuff */

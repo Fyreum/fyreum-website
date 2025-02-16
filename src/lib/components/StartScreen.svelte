@@ -41,8 +41,8 @@
 </script>
 
 <div class="relative flex flex-col lg:items-center -mt-12 w-full h-screen justify-end 2xl:justify-center">
-    <div class="absolute bottom-0 left-0 w-full">
-        <img class="w-full rotate-180 scale-y-50 translate-y-[25%]" src={heroBackground}>
+    <div class="absolute bottom-0 left-0 w-full pointer-events-none -z-10">
+        <img class="w-full rotate-180 scale-y-50 translate-y-[25%]" src={heroBackground} alt="Hero background lines">
     </div>
 
     <!-- Text top left -->

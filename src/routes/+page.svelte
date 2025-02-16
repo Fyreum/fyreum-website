@@ -1,5 +1,4 @@
 <script lang="ts">
-    import StartScreenSection from "$lib/components/StartScreenSection.svelte";
     import LanguagesSection from "$lib/components/ProgrammingLanguagesSection.svelte";
     import BlogsBanner from "$lib/components/blog/BlogsBanner.svelte";
     import WebsiteDesignsSection from "$lib/components/WebsiteDesignsSection.svelte";

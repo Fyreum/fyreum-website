@@ -1,7 +1,7 @@
 <script lang="ts">
-    /*import blogsPreview from '$lib/images/home/blogs-preview.webp';*/
     import BlogPreviewCard from "$lib/components/blog/BlogPreviewCard.svelte";
     import VisitBlogsCard from "$lib/components/blog/VisitBlogsCard.svelte";
+    import {defaultBlog, nwBlog, statixBlog} from "$lib/blogs";
 </script>
 
 
@@ -15,9 +15,9 @@
     <!--<img class="absolute z-[-1] right-[21%] -bottom-32 rotate-6 flex w-56 aspect-[3/4] object-cover object-[25%] rounded-lg overflow-hidden shadow-md fade-out-bottom" src={blogsPreview} alt="Blogs preview">-->
 
     <div class="max-content grid sm:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
-        <BlogPreviewCard />
-        <BlogPreviewCard />
-        <BlogPreviewCard />
+        <BlogPreviewCard blog={statixBlog} />
+        <BlogPreviewCard blog={nwBlog} />
+        <BlogPreviewCard blog={defaultBlog} />
 
         <VisitBlogsCard />
     </div>
