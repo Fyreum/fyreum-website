@@ -14,7 +14,7 @@
                 <div class="flex gap-2 items-center">
                     <span class="flex gap-2 items-center px-2 rounded-md text-blue-400 border border-blue-700">
                         <User class="text-inherit size-4" />
-                        He/Him
+                        Male
                     </span>
                     <span class="flex gap-2 items-center px-2 rounded-md text-purple-400 border border-purple-700">
                         <Cake class="text-inherit size-4" />

@@ -20,7 +20,7 @@
 </svelte:head>
 
 <div class="max-content mb-12 mt-6 lg:mt-9">
-    <div class="flex gap-2 items-center mb-3  w-fit">
+    <div class="flex gap-2 items-center mb-3 w-fit">
         <span class="w-1 rounded-full bg-blue-500 h-6"></span>
         <BlogTagBadge name="CSS" color="purple" />
         <BlogTagBadge name="Dev" color="blue" />
@@ -31,6 +31,11 @@
     </h1>
 
     <div class="flex gap-6 items-center font-semibold">
+        <div class="hidden flex gap-2 items-center w-fit">
+            <BlogTagBadge name="CSS" color="purple" />
+            <BlogTagBadge name="Dev" color="blue" />
+        </div>
+
         <span class="flex gap-2 items-center text-xl text-slate-400">
             <User class="size-6 text-blue-100" />
             {blog.author}

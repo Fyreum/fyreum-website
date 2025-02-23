@@ -1,7 +1,7 @@
 <script lang="ts">
     import BlogPreviewCard from "$lib/components/blog/BlogPreviewCard.svelte";
     import {defaultBlog, nwBlog, statixBlog} from "$lib/blogs";
-    import {Filter, Plus, Tag} from "lucide-svelte";
+    import {Filter, Tag} from "lucide-svelte";
 </script>
 
 <svelte:head>
@@ -26,7 +26,7 @@
         <div class="absolute left-0 -top-1/3 z-[-1] bg-purple-500/30 w-1/2 aspect-square rounded-full blur-[15rem] -translate-x-1/2 -translate-y-1/2"></div>
         <div class="absolute right-0 -bottom-1/3 z-[-1] bg-blue-500/35 w-1/2 aspect-square rounded-full blur-[15rem] translate-x-1/2 translate-y-1/2"></div>
 
-        <select class="py-3 px-4 pe-7 text-blue-100 rounded-lg text-sm bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none">
+        <select class="py-3 px-4 pe-7 text-blue-100 rounded-lg text-sm bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none">
             <option selected>Latest</option>
             <option>Oldest</option>
             <option>Most Popular</option>
@@ -40,7 +40,7 @@
                         <path d="m21 21-4.3-4.3"></path>
                     </svg>
                 </div>
-                <input class="py-3 ps-10 pe-4 block w-full rounded-lg text-sm text-blue-100 focus:outline focus:outline-2 focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none bg-black" type="text" role="combobox" aria-expanded="false" placeholder="Type a name" value="" data-hs-combo-box-input="">
+                <input class="py-3 ps-10 pe-4 block w-full bg-black/50 rounded-lg text-sm text-blue-100 focus:outline focus:outline-2 focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="Type a name" value="" data-hs-combo-box-input="">
             </div>
 
             <!-- SearchBox Dropdown -->

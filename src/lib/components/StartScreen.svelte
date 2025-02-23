@@ -41,7 +41,7 @@
 </script>
 
 <div class="relative flex flex-col lg:items-center -mt-12 w-full h-screen justify-end 2xl:justify-center">
-    <div class="absolute bottom-0 left-0 w-full pointer-events-none -z-10">
+    <div class="absolute bottom-0 left-0 w-full pointer-events-none -z-10 fade-out-sides">
         <img class="w-full rotate-180 scale-y-50 translate-y-[25%]" src={heroBackground} alt="Hero background lines">
     </div>
 
@@ -51,7 +51,7 @@
             Hello, I'm <span class="gradient-text mr-0.5">Fyreum</span>.
         </h1>
 
-        <p class="text-2xl lg:text-3xl mt-6 text-slate-400">
+        <p class="text-2xl lg:text-3xl mt-6 text-slate-400 tracking-tight">
             I'm a Java & Web developer
         </p>
 
