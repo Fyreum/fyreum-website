@@ -164,6 +164,10 @@ nav.sticking {
     mask-image: linear-gradient(to right, #000, transparent 100%);
 }
 
+.mask-hero {
+    mask-image: url("$lib/images/heroBackground.svg");
+}
+
 @property --lang-url {
     syntax: '<url>';
     initial-value: '';
@@ -450,5 +454,25 @@ nav.sticking {
     }
     50% {
         border-bottom-color: var(--language-color);
+    }
+}
+
+@property --gravitate-height {
+    syntax: '<length>';
+    initial-value: -0.75rem;
+    inherits: true;
+}
+
+.animate-gravitate {
+    --gravitate-height: -0.75rem;
+    animation: gravitate 6s infinite ease-in-out;
+}
+
+@keyframes gravitate {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(var(--gravitate-height));
     }
 }

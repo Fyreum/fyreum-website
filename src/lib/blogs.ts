@@ -1,5 +1,5 @@
 import type {Blog} from "$lib/types";
-import statixPreview from "$lib/images/home/statix_homepage.png";
+import statixPreview from "$lib/images/home/statix_homepage-2.png";
 import nwPreview from "$lib/images/nw-website.png";
 import preview from "$lib/images/mirado_preview.png";
 

@@ -1,8 +1,8 @@
 
 <script lang="ts">
     import revine from '$lib/images/revine_oppenheimer.png';
-    import erethon_homepage from '$lib/images/home/erethon_homepage.png';
-    import statix_homepage from '$lib/images/home/statix_homepage.png';
+    import erethon_homepage from '$lib/images/home/erethon_homepage-2.png';
+    import statix_homepage from '$lib/images/home/statix_homepage-2.png';
     import statix_pricing from '$lib/images/home/statix_pricing.png';
 </script>
 

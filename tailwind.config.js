@@ -21,8 +21,8 @@ export default {
         }
       },
       screens: {
-        'sm-max': { 'max': '640px' },
         'xs': { 'min': '400px' },
+        'weird-md': { 'min': '820px' },
       },
       boxShadow: {
         'glow': '0px 3px 8px -2px theme("colors.dark-2")',
@@ -34,8 +34,6 @@ export default {
     "sm:col-span-2",
     "sm:aspect-[1/1]",
     "sm:aspect-[2/1]",
-    "sm-max:aspect-[1/1]",
-    "sm-max:aspect-[1/2]",
 
     "bg-blue-600",
     "border-blue-600",

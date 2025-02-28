@@ -16,7 +16,7 @@
         Blogs
     </h1>
 
-    <p class="mt-6 mx-auto max-w-3xl tracking-tight text-center text-2xl lg:text-3xl text-slate-400">
+    <p class="mt-6 px-6 mx-auto max-w-3xl tracking-tight text-center text-2xl lg:text-3xl text-slate-400">
         I write about me, tech and more. Check out my latest blogs below.
     </p>
 </div>

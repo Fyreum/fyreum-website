@@ -3,7 +3,7 @@
     import BlogsBanner from "$lib/components/blog/BlogsBanner.svelte";
     import WebsiteDesignsSection from "$lib/components/WebsiteDesignsSection.svelte";
     import AboutSection from "$lib/components/AboutSection.svelte";
-    import StartScreen from "$lib/components/StartScreen.svelte";
+    import StartScreen from "$lib/components/StartScreen2.svelte";
 </script>
 
 <svelte:head>
@@ -15,7 +15,6 @@
     <!--<meta name="robots" content="index, follow" />-->
 </svelte:head>
 
-<!--<StartScreenSection />-->
 <StartScreen />
 
 <AboutSection />
