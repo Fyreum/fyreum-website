@@ -19,7 +19,7 @@
     });
 </script>
 
-<div class="relative flex flex-col -mt-12 w-full h-screen">
+<div class="relative flex flex-col -mt-12 w-full h-screen overflow-x-hidden">
     <div class="absolute bottom-0 left-0 w-full pointer-events-none -z-10 fade-out-sides">
         <img class="w-full rotate-180 scale-y-50 translate-y-[25%]" src={heroBackground} alt="Hero background lines">
         <div class="z-20 absolute bottom-0 size-full rotate-180 scale-y-50 mask-hero translate-y-[25%] before:scale-y-[200%] before:translate-y-1/2 before:absolute before:content-[''] before:text-white before:inset-0 before:[--size:100px] md:before:[--size:150px] lg:before:[--size:200px] before:[background:radial-gradient(var(--size)_circle_at_var(--x)_var(--y),currentColor,transparent)]" bind:this={heroHover}></div>

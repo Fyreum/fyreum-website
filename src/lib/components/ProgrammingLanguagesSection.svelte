@@ -225,7 +225,7 @@
 
 </script>
 
-<div class="w-full bg-black/50 border-t border-gray-600/60 px-4">
+<div class="w-full bg-black/50 border-t border-gray-600/60 px-4 overflow-x-hidden">
     <div class="text-center py-12 flex flex-col items-center gap-6">
         <h2 class="text-blue-100 text-4xl font-bold">
             Programming Languages
