@@ -38,11 +38,11 @@
                 <FolderCode class="text-inherit h-5" />
             </NavItem>
 
-            <NavItem href="/#blogs" text="Blogs">
+            <NavItem href="/blogs" text="Blogs">
                 <NotebookPen class="text-inherit h-5" />
             </NavItem>
 
-            <NavItem href="/#contact" text="Contact">
+            <NavItem href="mailto:mail@fyreum.de" text="Contact">
                 <Mail class="text-inherit h-5" />
             </NavItem>
         </div>

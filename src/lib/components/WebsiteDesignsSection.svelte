@@ -2,8 +2,8 @@
 <script lang="ts">
     import revine from '$lib/images/revine_oppenheimer.png';
     import erethon_homepage from '$lib/images/home/erethon_homepage-2.png';
-    import statix_homepage from '$lib/images/home/statix_homepage-2.png';
-    import statix_pricing from '$lib/images/home/statix_pricing.png';
+    import statix_homepage from '$lib/images/home/statix_homepage-3.png';
+    import statix_pricing from '$lib/images/home/statix_pricing-2.png';
 </script>
 
 <div id="projects" class="relative w-full py-12 bg-white/10 border-t border-gray-600/60 overflow-clip scroll-mt-16 gradient-highlights">

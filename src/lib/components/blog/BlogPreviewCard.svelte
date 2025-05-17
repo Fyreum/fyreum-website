@@ -25,8 +25,12 @@
             {blog.title}
         </h3>
 
-        <p class="text-xl text-slate-400 line-clamp-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et.
+        <p class="text-xl text-slate-400 line-clamp-4" title="{blog.description}">
+            {#if blog.description}
+                {blog.description}
+            {:else}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et.
+            {/if}
         </p>
 
         <div class="mt-auto flex gap-6 text-xl font-bold">

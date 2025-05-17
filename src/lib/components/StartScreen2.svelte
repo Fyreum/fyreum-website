@@ -19,7 +19,7 @@
     });
 </script>
 
-<div class="relative flex flex-col -mt-12 w-full h-screen overflow-hidden">
+<div class="relative flex flex-col -mt-[4.25rem] w-full h-screen overflow-hidden bg-gradient-to-r from-black/50 via-transparent">
     <div class="absolute bottom-0 left-0 w-full pointer-events-none -z-10 fade-out-sides">
         <img class="w-full rotate-180 scale-y-50 translate-y-[25%]" src={heroBackground} alt="Hero background lines">
         <div class="z-20 absolute bottom-0 size-full rotate-180 scale-y-50 mask-hero translate-y-[25%] before:scale-y-[200%] before:translate-y-1/2 before:absolute before:content-[''] before:text-white before:inset-0 before:[--size:100px] md:before:[--size:150px] lg:before:[--size:200px] before:[background:radial-gradient(var(--size)_circle_at_var(--x)_var(--y),currentColor,transparent)]" bind:this={heroHover}></div>
@@ -32,7 +32,7 @@
         </h1>
 
         <p class="text-2xl lg:text-3xl mt-6 text-slate-400 tracking-tight">
-            I'm a Java & Web developer
+            I'm a Full Stack developer
         </p>
 
         <button class="hidden bg-blue-100 rounded-full px-4 py-1.5 text-neutral-800 mt-8 font-bold transition-all hover:brightness-[85%]">

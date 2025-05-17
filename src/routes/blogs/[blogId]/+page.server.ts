@@ -1,9 +1,9 @@
-import {defaultBlog, nwBlog, statixBlog} from "$lib/blogs";
+import {tailwindVsBootsrapBlog, nwBlog, statixBlog} from "$lib/blogs";
 
 export async function load({ params }) {
     const blogId = params.blogId;
 
-    let blog = defaultBlog;
+    let blog = tailwindVsBootsrapBlog;
 
     if (blogId === "statix") {
         blog = statixBlog;

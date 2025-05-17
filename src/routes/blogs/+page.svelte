@@ -1,6 +1,6 @@
 <script lang="ts">
     import BlogPreviewCard from "$lib/components/blog/BlogPreviewCard.svelte";
-    import {defaultBlog, nwBlog, statixBlog} from "$lib/blogs";
+    import {tailwindVsBootsrapBlog, nwBlog, statixBlog} from "$lib/blogs";
     import {Filter, Tag} from "lucide-svelte";
 </script>
 
@@ -69,5 +69,5 @@
 <div class="max-content px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
     <BlogPreviewCard blog={statixBlog} />
     <BlogPreviewCard blog={nwBlog} />
-    <BlogPreviewCard blog={defaultBlog} />
+    <BlogPreviewCard blog={tailwindVsBootsrapBlog} />
 </div>
