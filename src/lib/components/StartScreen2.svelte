@@ -1,7 +1,7 @@
 <script lang="ts">
     import heroBackground from "$lib/images/heroBackground.svg";
-    import image1 from "$lib/images/bedrock_docs_screenshot.png";
-    import image2 from "$lib/images/revine_oppenheimer.png";
+    import image1 from "$lib/images/revine_oppenheimer.png";
+    import image2 from "$lib/images/fyboard_preview.png";
     import image3 from "$lib/images/mirado_preview.png";
     import {onMount} from "svelte";
 
@@ -81,31 +81,31 @@
 
     <div class="relative ml-10 weird-md:ml-auto mt-40 lg:m-0 lg:absolute lg:h-full lg:top-[40%] xl:top-1/4 w-full max-w-2xl weird-md:max-w-3xl lg:-translate-x-24 xl:translate-x-0 lg:left-[55%]">
         <div class="absolute left-0 top-0 h-fit w-[34%] -translate-y-1/2 transition-transform duration-500 hover:scale-110 hover:z-20">
-            <div class="relative z-10 rounded-2xl glowing-card after:inset-[-1px] before:inset-[-1px] after:blur-[4rem] animate-gravitate motion-reduce:animate-none">
+            <div class="relative z-10 rounded-2xl glowing-card after:inset-0 before:inset-0 after:blur-[4rem] animate-gravitate motion-reduce:animate-none">
                 <div class="flex gap-3 items-center px-3 py-2 bg-neutral-800/25 rounded-t-2xl">
-                    <span class="rounded-full size-2.5 bg-red-400"></span>
-                    <span class="rounded-full size-2.5 bg-yellow-400"></span>
-                    <span class="rounded-full size-2.5 bg-green-400"></span>
+                    <span class="rounded-full size-2.5 bg-red-400 shadow-md"></span>
+                    <span class="rounded-full size-2.5 bg-yellow-400 shadow-md"></span>
+                    <span class="rounded-full size-2.5 bg-green-400 shadow-md"></span>
                 </div>
                 <img class="size-full object-cover aspect-video rounded-b-2xl" src={image1} alt="">
             </div>
         </div>
         <div class="absolute left-0 translate-x-[90%] top-0 translate-y-[20%] h-fit w-[37%] transition-transform duration-500 hover:scale-110 hover:z-20">
-            <div class="relative z-10 rounded-2xl glowing-card after:inset-[-1px] before:inset-[-1px] after:blur-[4rem] animate-gravitate motion-reduce:animate-none" style="animation-delay: 0.6s">
+            <div class="relative z-10 rounded-2xl glowing-card after:inset-0 before:inset-0 after:blur-[4rem] animate-gravitate motion-reduce:animate-none" style="animation-delay: 0.6s">
                 <div class="flex gap-3 items-center px-3 py-2 bg-neutral-800/25 rounded-t-2xl">
-                    <span class="rounded-full size-2.5 bg-red-400"></span>
-                    <span class="rounded-full size-2.5 bg-yellow-400"></span>
-                    <span class="rounded-full size-2.5 bg-green-400"></span>
+                    <span class="rounded-full size-2.5 bg-red-400 shadow-md"></span>
+                    <span class="rounded-full size-2.5 bg-yellow-400 shadow-md"></span>
+                    <span class="rounded-full size-2.5 bg-green-400 shadow-md"></span>
                 </div>
                 <img class="size-full object-cover aspect-video rounded-b-2xl" src={image2} alt="">
             </div>
         </div>
         <div class="absolute left-0 translate-x-[35%] top-0 translate-y-[125%] h-fit w-[41%] transition-transform duration-500 hover:scale-110 hover:z-20">
-            <div class="relative z-10 rounded-2xl glowing-card after:inset-[-1px] before:inset-[-1px] after:blur-[4rem] animate-gravitate motion-reduce:animate-none" style="animation-delay: 0.4s">
+            <div class="relative z-10 rounded-2xl glowing-card after:inset-0 before:inset-0 after:blur-[4rem] animate-gravitate motion-reduce:animate-none" style="animation-delay: 0.4s">
                 <div class="flex gap-3 items-center px-3 py-2 bg-neutral-800/25 rounded-t-2xl">
-                    <span class="rounded-full size-2.5 bg-red-400"></span>
-                    <span class="rounded-full size-2.5 bg-yellow-400"></span>
-                    <span class="rounded-full size-2.5 bg-green-400"></span>
+                    <span class="rounded-full size-2.5 bg-red-400 shadow-md"></span>
+                    <span class="rounded-full size-2.5 bg-yellow-400 shadow-md"></span>
+                    <span class="rounded-full size-2.5 bg-green-400 shadow-md"></span>
                 </div>
                 <img class="size-full object-cover aspect-video rounded-b-2xl" src={image3} alt="">
             </div>

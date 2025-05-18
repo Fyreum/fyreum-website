@@ -133,6 +133,7 @@
             }
             isDragging = false;
             carousel.classList.remove("dragging");
+            calculateAndSetCurrentLanguage();
         }
 
         const infiniteScroll = () => {
@@ -198,7 +199,7 @@
         carousel.addEventListener("mousemove", dragging);
         document.addEventListener("mouseup", dragStop);
         document.addEventListener("touchend", dragStop);
-        carousel.addEventListener("scrollend", calculateAndSetCurrentLanguage);
+        //carousel.addEventListener("scrollend", calculateAndSetCurrentLanguage);
         carousel.addEventListener("scroll", infiniteScroll);
         wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
         wrapper.addEventListener("mouseleave", autoPlay);

@@ -4,5 +4,12 @@ export type Blog = {
     author: string;
     previewImage: string;
     description: string;
-    date: string;
+    date: Date;
+    tags?: BlogTag[];
+}
+
+export type BlogTag = {
+    id: string;
+    name: string;
+    color: string;
 }

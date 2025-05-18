@@ -1,6 +1,6 @@
 <script lang="ts">
-    import fyboardIcon from "$lib/images/fyboard-favicon.png";
-    import fycloudIcon from "$lib/images/fycloud-favicon_purple.png";
+    import fyboardIcon from "$lib/images/favicons/fyboard.png";
+    import fycloudIcon from "$lib/images/favicons/fycloud-purple.png";
 </script>
 
 <div class="bg-black/50 pt-6 pb-20 border-t border-gray-600/60">

@@ -6,18 +6,24 @@
     export let blog: Blog;
 </script>
 
-<a class="relative w-full group rounded-3xl bg-black overflow-hidden mx-auto max-w-96 sm:max-w-fit aspect-[3/4] border-2 border-gray-700/60 unstyled-link hover:cursor-pointer"
+<a id="card-{blog.id}"
+   class="relative w-full group rounded-3xl bg-black overflow-hidden mx-auto max-w-96 sm:max-w-fit aspect-[3/4] border-2 border-gray-700/60 unstyled-link hover:cursor-pointer"
    href="/blogs/{blog.id}">
     <div class="absolute top-0 left-0 w-full h-[60%] fade-out-bottom-2">
         <img class="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105" alt="" src={blog.previewImage}>
     </div>
 
     <div class="absolute top-3 right-3 flex gap-2 items-center">
+        {#if blog.tags}
+            {#each blog.tags as tag}
+                <BlogTagBadge name="{tag.name}" color="{tag.color}" />
+            {/each}
+        {/if}
         <!--<BlogTagBadge name="New" color="green" />-->
-        <BlogTagBadge name="CSS" color="purple" />
+        <!--<BlogTagBadge name="CSS" color="purple" />-->
         <!--<BlogTagBadge name="JS" color="yellow" />
         <BlogTagBadge name="Svelte" color="red" />-->
-        <BlogTagBadge name="Java" color="blue" />
+        <!--<BlogTagBadge name="Java" color="blue" />-->
     </div>
 
     <div class="p-6 md:px-8 md:pb-8 pt-[50%] h-full z-10 relative flex flex-col gap-3 gradient-highlights before:bg-purple-600 after:bg-blue-600 before:top-0 before:-translate-y-full after:bottom-0 after:translate-y-0">

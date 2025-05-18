@@ -2,16 +2,13 @@
     import {Calendar, Clock, User} from "lucide-svelte";
     import BlogTagBadge from "$lib/components/blog/BlogTagBadge.svelte";
     import BlogsBanner from "$lib/components/blog/BlogsBanner.svelte";
+    import {getBlogModule} from "$lib/blogs";
 
     export let data;
 
     $: blog = data.blog;
 
-    let BlogPage: any;
-
-    import('./../../../lib/blogs/nw-labs.svelte').then(module => {
-        BlogPage = module.default;
-    });
+    let blogModule = getBlogModule(data.blog.id);
 </script>
 
 <svelte:head>
@@ -19,7 +16,7 @@
     <meta name="description" content="{blog.description}" />
 </svelte:head>
 
-<div class="px-6 sm:px-8">
+<div class="flex flex-col px-6 sm:px-8 bg-black/50 -mt-[4.25rem] pt-[4.25rem]">
     <div class="max-content mb-9 sm:mb-12 mt-6 lg:mt-9">
         <div class="flex gap-2 items-center mb-3 justify-center">
             <BlogTagBadge name="CSS" color="purple" />
@@ -37,7 +34,11 @@
             </span>
             <span class="flex flex-col sm:flex-row gap-1 sm:gap-2 items-center sm:text-xl text-slate-400">
                 <Calendar class="size-5 sm:size-6 text-blue-100" />
-                {blog.date}
+                {blog.date.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                })}
             </span>
             <span class="flex flex-col sm:flex-row gap-1 sm:gap-2 items-center sm:text-xl text-slate-400">
                 <Clock class="size-5 sm:size-6 text-blue-100" />
@@ -46,10 +47,16 @@
         </div>
     </div>
 
-    <div class="max-content format-headers text-lg mb-12">
+    <div class="max-content flex flex-col format-headers text-lg mb-12">
         <img class="w-full rounded-2xl sm:rounded-3xl mb-9" src={blog.previewImage} alt="Blog preview" />
 
-        <svelte:component this={BlogPage} />
+        {#if blogModule}
+            <svelte:component this={blogModule} />
+        {:else}
+            <div class="text-white p-4 rounded-lg bg-blue-500/15 border-2 border-blue-500 w-fit mx-auto my-6">
+                Sorry, but the content for this blog is currently not available. Please check back later.
+            </div>
+        {/if}
     </div>
 </div>
 <BlogsBanner />
