@@ -5,6 +5,7 @@
     import AboutSection from "$lib/components/AboutSection.svelte";
     import StartScreen from "$lib/components/StartScreen2.svelte";
     import MyAppsSection from "$lib/components/MyAppsSection.svelte";
+    import SpotlightSection from "$lib/components/SpotlightSection.svelte";
 </script>
 
 <svelte:head>
@@ -22,7 +23,7 @@
 
 <WebsiteDesignsSection />
 
-<LanguagesSection />
+<SpotlightSection />
 
 <MyAppsSection />
 

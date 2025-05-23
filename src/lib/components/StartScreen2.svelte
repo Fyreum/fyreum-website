@@ -19,7 +19,7 @@
     });
 </script>
 
-<div class="relative flex flex-col -mt-[4.25rem] w-full h-screen overflow-hidden bg-gradient-to-r from-black/50 via-transparent">
+<div class="relative flex flex-col -mt-[4.25rem] w-screen h-[110vh] md:h-[125vh] lg:h-[105vh] xl:h-screen overflow-hidden bg-gradient-to-r from-black/50 via-transparent">
     <div class="absolute bottom-0 left-0 w-full pointer-events-none -z-10 fade-out-sides">
         <img class="w-full rotate-180 scale-y-50 translate-y-[25%]" src={heroBackground} alt="Hero background lines">
         <div class="z-20 absolute bottom-0 size-full rotate-180 scale-y-50 mask-hero translate-y-[25%] before:scale-y-[200%] before:translate-y-1/2 before:absolute before:content-[''] before:text-white before:inset-0 before:[--size:100px] md:before:[--size:150px] lg:before:[--size:200px] before:[background:radial-gradient(var(--size)_circle_at_var(--x)_var(--y),currentColor,transparent)]" bind:this={heroHover}></div>
@@ -47,6 +47,13 @@
                     Java
                 </span>
             </div>
+            <div class="group relative aspect-square xs:size-14 cursor-help bg-black/50 border-2 border-gray-700/60 border-b-purple-500 p-2 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-purple-500/50 motion-reduce:animate-none animate-border-b [--language-color-2:#a855f799] [--language-color:#a855f7]">
+                <div class="size-full language-mask bg-blue-100 [--lang-url:url(/php-edited.png)] transition-colors group-hover:bg-[#777BB3]"></div>
+
+                <span class="absolute left-1/2 -translate-x-1/2 top-full translate-y-1/2 bg-black px-2 py-0.5 rounded-md border border-gray-700/60 opacity-0 transition-opacity pointer-events-none group-hover:opacity-100">
+                    PHP
+                </span>
+            </div>
             <div class="group relative aspect-square xs:size-14 cursor-help bg-black/50 border-2 border-gray-700/60 border-b-yellow-500 p-2 rounded-lg shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/50 motion-reduce:animate-none animate-border-b [--language-color-2:#FFD60099] [--language-color:#FFD600]">
                 <div class="size-full language-mask bg-blue-100 [--lang-url:url(/javascript-edited.png)] transition-colors group-hover:bg-[#FFD600]"></div>
 
@@ -66,13 +73,6 @@
 
                 <span class="absolute left-1/2 -translate-x-1/2 top-full translate-y-1/2 bg-black px-2 py-0.5 rounded-md border border-gray-700/60 opacity-0 transition-opacity pointer-events-none group-hover:opacity-100">
                     TailwindCSS
-                </span>
-            </div>
-            <div class="group relative aspect-square xs:size-14 cursor-help bg-black/50 border-2 border-gray-700/60 border-b-purple-500 p-2 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-purple-500/50 motion-reduce:animate-none animate-border-b [--language-color-2:#a855f799] [--language-color:#a855f7]">
-                <div class="size-full language-mask bg-blue-100 [--lang-url:url(/php-edited.png)] transition-colors group-hover:bg-[#777BB3]"></div>
-
-                <span class="absolute left-1/2 -translate-x-1/2 top-full translate-y-1/2 bg-black px-2 py-0.5 rounded-md border border-gray-700/60 opacity-0 transition-opacity pointer-events-none group-hover:opacity-100">
-                    PHP
                 </span>
             </div>
         </div>

@@ -23,8 +23,8 @@
                 </div>
 
                 <p class="mt-6 text-xl text-slate-400">
-                    I'm from Hamburg, Germany, and an Apprentice IT Specialist for Application Development in the
-                    field of E-Commerce. I love working on projects and learning new things! And thus, I'm always looking
+                    I'm from Hamburg, Germany, and a Full Stack Developer in the field of E-Commerce.
+                    I love working on projects and learning new things! And thus, I'm always looking
                     for new ideas.
                 </p>
             </div>

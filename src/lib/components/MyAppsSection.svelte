@@ -21,7 +21,7 @@
                 Fyboard
             </h3>
 
-            <p class="text-gray-400 text-lg">
+            <p class="text-gray-400 text-lg text-center">
                 A customizable Dashboard application
             </p>
 
@@ -38,7 +38,7 @@
                 Fycloud
             </h3>
 
-            <p class="text-gray-400 text-lg">
+            <p class="text-gray-400 text-lg text-center">
                 A self hosted Cloud & File share solution
             </p>
 
